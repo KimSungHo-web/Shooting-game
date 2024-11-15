@@ -1,5 +1,5 @@
 using UnityEngine;
-public interface IPassive
+public interface IPassiveItem
 {
     void ApplyPassiveEffect(GameObject target);
     void RemovePassiveEffect(GameObject target);

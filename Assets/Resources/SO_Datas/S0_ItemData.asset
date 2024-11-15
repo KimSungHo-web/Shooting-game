@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   itemValue: 0
   itemIcon: {fileID: 0}
-  itemType: 0
+  itemType: 1
   isStackable: 0
   stackSize: 0
   SlotSize: 0
