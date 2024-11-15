@@ -843,8 +843,9 @@ GameObject:
   - component: {fileID: 1778934973455908264}
   - component: {fileID: 5236343239520050958}
   - component: {fileID: 7777038571978438719}
-  - component: {fileID: 7777038571978438721}
   - component: {fileID: 7777038571978438720}
+  - component: {fileID: 7777038571978438721}
+  - component: {fileID: 7777038571978438722}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -6085,6 +6086,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
+--- !u!114 &7777038571978438722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d2c96bd818939459abcb376753f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCameraTarget: {fileID: 1349925334}
+  topClamp: 75
+  bottomClamp: -40
+  lockCameraPosition: 0
 --- !u!120 &7790364256788753604
 LineRenderer:
   serializedVersion: 2
