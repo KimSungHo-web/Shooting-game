@@ -5,20 +5,23 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [Header("AttackState")]
+    private EnemyData enemyData;
     public float attackRate = 0.5f; //공격 (쿨타임)
-    public int attackDamage = 10; //공격 데미지
+    bool playerInRange; // 플레이어가 사거리 내에 있는지 여부
+    float attacktimer; // 공격 시간 측정용 타이머
 
     [Header("Components")]
     Animator anim;
     GameObject player;
     //플레이어 체력
     EnemyHealth enemyHealth;
-    bool playerInRange; // 플레이어가 사거리 내에 있는지 여부
-    float attacktimer; // 공격 시간 측정용 타이머
+
 
 
     void Awake()
     {
+        EnemyDataManager enemydatamanager =GetComponent<EnemyDataManager>();
+        enemyData = enemydatamanager.enemyData;
         player = GameObject.FindGameObjectWithTag("Player");
         //플레이어 체력
         enemyHealth = GetComponent<EnemyHealth>();
@@ -30,6 +33,7 @@ public class EnemyAttack : MonoBehaviour
         if (other.gameObject == player)
         {
             playerInRange = true; //콜라이더가 겹쳐지면 플레이어가 적의 공격 범위 안에 들어온것으로 판단
+            enemyHealth.currentHealth -= enemyData.attackDamage;
         }
     }
 

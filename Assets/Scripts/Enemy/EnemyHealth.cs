@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int startHealth = 100; //초기 체력
-    public int currentHealth; //현재체력
-    public float disappearSpeed = 2.5f; //사라지는 시간
-    public int goldValue = 10; //골드
-    public int expValue = 10; //경험치
-    public AudioClip deathClip; //죽는 소리
+    private EnemyData enemyData;
+    public int currentHealth;
+    bool isDead;
+    bool isDisappearing;
+    Animator animator;
+    AudioSource enemyAudio;
 
-    Animator animator; //애니메이터
-    AudioSource enemyAudio; // 적 오디오
     ParticleSystem hitParticles; // 히트 파티클
-    CapsuleCollider capsuleCollider; 
-    bool isDead; //죽은상태
-    bool isdisappearing; // 사라지는 중
+    CapsuleCollider capsuleCollider;
+    private Testgold testgold;
 
     void Awake()
     {
@@ -24,17 +21,28 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        testgold = FindObjectOfType<Testgold>();
 
-        currentHealth = startHealth;
+        EnemyDataManager enemydatamanager = GetComponent<EnemyDataManager>();
+        enemyData = enemydatamanager.enemyData;
+
+        currentHealth = enemyData.startHealth;
     }
 
     void Update()
     {
-        if (isdisappearing)
+
+        //테스트를 위해 추가한 코드입니다
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            
-            transform.Translate(-Vector3.up * disappearSpeed * Time.deltaTime);
+            TakeDamage(20, transform.position); // T 키를 누르면 20 데미지
         }
+
+        if (isDisappearing)
+        {
+            transform.Translate(-Vector3.up *enemyData.disappearSpeed * Time.deltaTime);
+        }
+        //테스트를 위해 추가한 코드입니다
     }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
@@ -60,19 +68,17 @@ public class EnemyHealth : MonoBehaviour
     void Death()
     {
         isDead = true;
+        animator.SetTrigger("Dead");
     }
-    public void Disappearing() 
+    public void StartSinking() //Dead 애니메이션 이벤트가 저거로 설정되어잇는데 FBX파일 자체에 저장되어잇는거라 제거를 못함
     {
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-
         GetComponent<Rigidbody>().isKinematic = true;
 
-        isdisappearing = true;
+        isDisappearing = true;
 
-        //돈추가 경험치 추가
-        //참조매니저.인스텐스?.골드 += goldValue
-        //참조매니저.인스텐스?.경험치 += expValue
-
+        testgold.AddGold(enemyData.goldValue);
+        testgold.AddEXP(enemyData.expValue);
         Destroy(gameObject, 2f);
     }
 }
