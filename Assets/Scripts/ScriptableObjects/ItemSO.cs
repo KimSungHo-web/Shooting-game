@@ -9,31 +9,31 @@ public class ItemSO : InteractableSO
     public Sprite itemIcon;
     public ItemType itemType;
 
-    [Header("ÀÎº¥Åä¸®¼³Á¤")]
+    [Header("ì¸ë²¤í† ë¦¬ì„¤ì •")]
     public bool isStackable;
     public int stackSize;
     public int SlotSize;
 
-    [Header("Àåºñ")]
+    [Header("ì¥ë¹„")]
     public EquipType equipType;
-    public GameObject equipPrefab;
+    public GameObject equipItemPrefab;
     public Rarity rarity;
     public bool LeftHand;
     public string childPath;
 
-    [Header("¹«±âÁ¤º¸(speed´Â -¸é ¼Óµµ »¡¶óÁü)")]
+    [Header("ë¬´ê¸°ì •ë³´(speedëŠ” -ë©´ ì†ë„ ë¹¨ë¼ì§)")]
     public float projectileDamage;
     public float projectileSpeed;
     public float projectileScale;
 
-    [Header("¼Òºñ")]
+    [Header("ì†Œë¹„")]
     public List<ConsumableData> consumables;
     public GameObject dropItemPrefab;
 
-    [Header("¸®¼Ò½º")]
+    [Header("ë¦¬ì†ŒìŠ¤")]
     public ResourceType resourceType;
 
-    [Header("È¹µæ¿¡ ÇÊ¿äÇÑ ÀçÈ­(int,¸®¼Ò½º)")]
+    [Header("íšë“ì— í•„ìš”í•œ ì¬í™”(int,ë¦¬ì†ŒìŠ¤)")]
     public ResourceData[] needResources;
 
 }
