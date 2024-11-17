@@ -5,10 +5,10 @@ public class PlayerController : MonoBehaviour
 {
     public event Action<Vector2> MoveEvent = (_) => { };
     public event Action<Vector2> LookEvent = (_) => { };
-    public event Action<Vector2> FireEvent = (_) => { };
+    public event Action FireEvent = () => { };
 
     public bool isAttacking { get; protected set; }
-
+    
     public void CallMoveEvent (Vector2 direction)
     {
         MoveEvent.Invoke (direction);
@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
         LookEvent.Invoke (position);
     }
 
-    public void CallFireEvent (Vector2 position)
+    public void CallFireEvent ()
     {
-        FireEvent.Invoke (position);
+        FireEvent.Invoke ();
     }
 }
