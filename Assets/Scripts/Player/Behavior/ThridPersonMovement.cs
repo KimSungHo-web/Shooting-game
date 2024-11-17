@@ -4,32 +4,31 @@ using UnityEngine.Serialization;
 
 public class ThridPersonMovement : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5f;
-    [SerializeField] private float _turnSmoothTime = 0.12f;
-
-    private ThirdPersonController _thirdPersonController;
+    private PlayerController _playerController;
     private CharacterController _characterController;
+    
     private GameObject _mainCamera;
+    private PlayerStats _playerStats;
 
-    private float _rotationVelocity;
-    private Vector2 _movementDirection;
+    private Vector2 _inputDirection;
 
     private void Awake()
     {
-        _thirdPersonController = GetComponent<ThirdPersonController>();
+        _playerController = GetComponent<PlayerController>();
         _characterController = GetComponent<CharacterController>();
 
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
+        _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
     }
 
     private void OnEnable()
     {
-        _thirdPersonController.MoveEvent += ThirdPersonController_OnMoveEvent;
+        _playerController.MoveEvent += PlayerController_MoveEvent;
     }
 
     private void OnDisable()
     {
-        _thirdPersonController.MoveEvent -= ThirdPersonController_OnMoveEvent;
+        _playerController.MoveEvent -= PlayerController_MoveEvent;
     }
 
     private void Update()
@@ -37,23 +36,22 @@ public class ThridPersonMovement : MonoBehaviour
         Move();
     }
 
-    private void ThirdPersonController_OnMoveEvent (Vector2 direction)
+    private void PlayerController_MoveEvent (Vector2 direction)
     {
-        _movementDirection = direction;
+        _inputDirection = direction;
     }
 
     private void Move()
     {
-        if (_movementDirection != Vector2.zero)
+        if (_inputDirection != Vector2.zero)
         {
-            // turn
-            float targetAngle = Mathf.Atan2 (_movementDirection.x, _movementDirection.y) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
-            float rotation = Mathf.SmoothDampAngle (transform.eulerAngles.y, targetAngle, ref _rotationVelocity, _turnSmoothTime);
-            transform.rotation = Quaternion.Euler (0f, rotation, 0f);
+            float moveSpeedScaler = _playerController.isAttacking ? 0.5f : 1f;
+            float speed = _playerStats.moveSpeed * moveSpeedScaler;
 
-            // move
+            float targetAngle = Mathf.Atan2 (_inputDirection.x, _inputDirection.y) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
             Vector3 moveDirection = Quaternion.Euler (0f, targetAngle, 0f) * Vector3.forward;
-            _characterController.Move (_moveSpeed * Time.deltaTime * moveDirection);
+            
+            _characterController.Move (speed * Time.deltaTime * moveDirection);
         }
     }
 

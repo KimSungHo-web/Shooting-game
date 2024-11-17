@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ThridPersonInputController : ThirdPersonController
+public class PlayerInputController : PlayerController
 {
     public void OnMove(InputValue value)
     {
@@ -13,5 +13,10 @@ public class ThridPersonInputController : ThirdPersonController
     {
         Vector2 delta = value.Get<Vector2>();
         CallLookEvent (delta);
+    }
+
+    public void OnAttack (InputValue value)
+    {
+        isAttacking = value.isPressed;
     }
 }

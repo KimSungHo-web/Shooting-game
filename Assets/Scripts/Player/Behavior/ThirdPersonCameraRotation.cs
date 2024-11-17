@@ -12,7 +12,7 @@ public class ThirdPersonCameraRotation : MonoBehaviour
     
     private const float _threshold = 0.01f;
     
-    private ThirdPersonController _thirdPersonController;
+    private PlayerController _playerController;
 
     private float _cinemachineTargetYaw;
     private float _cinemachineTargetPitch;
@@ -20,17 +20,17 @@ public class ThirdPersonCameraRotation : MonoBehaviour
 
     private void Awake()
     {
-        _thirdPersonController = GetComponent<ThirdPersonController>();
+        _playerController = GetComponent<PlayerController>();
     }
 
     private void OnEnable()
     {
-        _thirdPersonController.LookEvent += ThirdPersonController_OnLookEvent;
+        _playerController.LookEvent += PlayerController_LookEvent;
     }
 
     private void OnDisable()
     {
-        _thirdPersonController.LookEvent -= ThirdPersonController_OnLookEvent;
+        _playerController.LookEvent -= PlayerController_LookEvent;
     }
 
     private void LateUpdate()
@@ -38,7 +38,7 @@ public class ThirdPersonCameraRotation : MonoBehaviour
         CameraRotation();
     }
 
-    private void ThirdPersonController_OnLookEvent (Vector2 delta)
+    private void PlayerController_LookEvent (Vector2 delta)
     {
         _lookDelta = delta;
     }
