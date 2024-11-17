@@ -10228,6 +10228,8 @@ MonoBehaviour:
   _bottomClamp: -40
   _topClamp: 70
   _lockCameraPosition: 0
+  recoilAmountY: 0
+  recoilAmountX: 0
 --- !u!114 &7777038571978438725
 MonoBehaviour:
   m_ObjectHideFlags: 0
