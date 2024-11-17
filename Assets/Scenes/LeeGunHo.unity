@@ -816,10 +816,11 @@ GameObject:
   - component: {fileID: 5740360879612464439}
   - component: {fileID: 7777038571978438719}
   - component: {fileID: 7777038571978438720}
-  - component: {fileID: 7777038571978438721}
-  - component: {fileID: 7777038571978438722}
+  - component: {fileID: 7777038571978438725}
+  - component: {fileID: 7777038571978438724}
+  - component: {fileID: 7777038571978438726}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: Shooter
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6026,38 +6027,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7777038571978438721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761261589889474691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af60908c3d611846a538bef8332294a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move: {x: 0, y: 0}
-  look: {x: 0, y: 0}
---- !u!114 &7777038571978438722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761261589889474691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08d2c96bd818939459abcb376753f7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  turnSmoothTime: 0.12
-  cinemachineCameraTarget: {fileID: 1349925334}
-  topClamp: 75
-  bottomClamp: -40
-  lockCameraPosition: 0
 --- !u!143 &7777038571978438723
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6084,6 +6053,48 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0.32, y: 0.66, z: -0.09}
+--- !u!114 &7777038571978438724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe483d2b3f6ca54abd1db286fd094dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineCameraTarget: {fileID: 1349925334}
+  _bottomClamp: -40
+  _topClamp: 70
+  _lockCameraPosition: 0
+--- !u!114 &7777038571978438725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f22c88752e59643aeacf5593aacb01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7777038571978438726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b301c52a682ec54ab43eda445de3ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
+  _turnSmoothTime: 0.12
 --- !u!120 &7790364256788753604
 LineRenderer:
   serializedVersion: 2
