@@ -713,7 +713,7 @@ MonoBehaviour:
   CameraDistance: 4
   CameraCollisionFilter:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 513
   IgnoreTag: Player
   CameraRadius: 0.2
   DampingIntoCollision: 0
@@ -2177,6 +2177,7 @@ GameObject:
   - component: {fileID: 7777038571978438728}
   - component: {fileID: 7777038571978438730}
   - component: {fileID: 7777038571978438729}
+  - component: {fileID: 7777038571978438731}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Player
@@ -10315,6 +10316,18 @@ MonoBehaviour:
   _shootableMask:
     serializedVersion: 2
     m_Bits: 513
+--- !u!114 &7777038571978438731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c48f81b246ea04fbafc0d6bbac49f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7781902785318087415
 GameObject:
   m_ObjectHideFlags: 0
