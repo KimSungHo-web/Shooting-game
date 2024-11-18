@@ -6,8 +6,8 @@ public class Inventory : MonoBehaviour
     public GameObject slotPrefab;
     public GameObject inventoryPanel;
 
-    private int _row = 4;
-    private int _col = 5;
+    private int _row = 5;
+    private int _col = 6;
 
     private InventorySlot[,] gridSlots;  // 그리드 슬롯 배열
     private List<Item> items = new List<Item>();  // 인벤토리 아이템 리스트
