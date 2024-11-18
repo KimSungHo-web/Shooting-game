@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7acc89e3e113f40a8d3f5b14acfff1, type: 3}
+  m_Name: S0_M4
+  m_EditorClassIdentifier: 
+  displayName: M4
+  description: "\uAE30\uBCF8 \uC18C\uCD1D\uC785\uB2C8\uB2E4."
+  itemValue: 0
+  itemIcon: {fileID: 0}
+  itemType: 1
+  isStackable: 0
+  stackSize: 0
+  SlotSize: 0
+  equipType: 1
+  equipPrefab: {fileID: 1117582899397640, guid: 689946d975a0e55449b1e7ae41933e73,
+    type: 3}
+  rarity: 0
+  LeftHand: 0
+  childPath: M4
+  projectileDamage: 10
+  projectileSpeed: 1
+  projectileScale: 1
+  consumables: []
+  dropItemPrefab: {fileID: 1117582899397640, guid: 689946d975a0e55449b1e7ae41933e73,
+    type: 3}
+  resourceType: 1
+  needResources: []
