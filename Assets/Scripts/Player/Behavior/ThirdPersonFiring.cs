@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class ThirdPersonFiring : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ThirdPersonFiring : MonoBehaviour
     [SerializeField] private float _effectsDisplayTime = 0.2f;
     [SerializeField] private float _fireRange;
     [SerializeField] private LayerMask _shootableMask;
+    [SerializeField] private float _defaultSpreadRange = 5f;
     
     private PlayerController _playerController;
     private Camera _mainCamera;
@@ -17,6 +19,8 @@ public class ThirdPersonFiring : MonoBehaviour
     private LineRenderer _gunLine;
     private AudioSource _gunAudio;
     private Light _gunLight;
+
+    private float _spreadRange;
 
     private void Awake()
     {
@@ -29,11 +33,23 @@ public class ThirdPersonFiring : MonoBehaviour
         _gunLight = _gunBarrelEnd.GetComponent<Light>();
 
         _playerController.FireEvent += PlayerController_FireEvent;
+        _playerController.MoveEvent += PlayerController_MoveEvent;
+
+        _spreadRange = _defaultSpreadRange;
     }
 
     private void PlayerController_FireEvent()
     {
         Fire();
+    }
+    
+    private void PlayerController_MoveEvent (Vector2 vector)
+    {
+        if (vector == Vector2.zero)
+            // not walking
+            _spreadRange = _defaultSpreadRange;
+        else
+            _spreadRange = _defaultSpreadRange * 5f;
     }
 
     private void Fire()
@@ -49,8 +65,10 @@ public class ThirdPersonFiring : MonoBehaviour
         _gunLine.enabled = true;
         _gunLine.SetPosition(0, _gunBarrelEnd.transform.position);
         
-        Vector2 screenCenterPoint = new Vector2 (Screen.width / 2f, Screen.height / 2f);
-        Ray fireRay = _mainCamera.ScreenPointToRay (screenCenterPoint);
+        float xSpread = Random.Range (-1f, 1f) * _spreadRange;
+        float ySpread = Random.Range (-1f, 1f) * _spreadRange;
+        Vector2 screenSpreadPoint = new Vector2 (Screen.width / 2f + xSpread, Screen.height / 2f + ySpread);
+        Ray fireRay = _mainCamera.ScreenPointToRay (screenSpreadPoint);
         
         if (Physics.Raycast (fireRay, out RaycastHit hit, _fireRange, _shootableMask))
         {

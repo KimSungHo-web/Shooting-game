@@ -10230,6 +10230,8 @@ MonoBehaviour:
   _bottomClamp: -40
   _topClamp: 70
   _lockCameraPosition: 0
+  mouseXSensitivity: 0.05
+  mouseYSensitivity: 0.05
   recoilAmountY: 0
   recoilAmountX: 0
 --- !u!114 &7777038571978438725
@@ -10317,6 +10319,7 @@ MonoBehaviour:
   _shootableMask:
     serializedVersion: 2
     m_Bits: 513
+  _defaultSpreadRange: 5
 --- !u!114 &7777038571978438731
 MonoBehaviour:
   m_ObjectHideFlags: 0

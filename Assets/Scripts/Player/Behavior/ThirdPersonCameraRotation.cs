@@ -7,6 +7,9 @@ public class ThirdPersonCameraRotation : MonoBehaviour
     [SerializeField] private float _bottomClamp = -40f;
     [SerializeField] private float _topClamp = 70f;
     [SerializeField] private bool _lockCameraPosition = false;
+    [SerializeField, Range (0.001f, 1f)] private float mouseXSensitivity = 0.05f;
+    [SerializeField, Range (0.001f, 1f)] private float mouseYSensitivity = 0.05f;
+    
 
     [Header ("Recoil")]
     [SerializeField, Range (0f, 7f)] private float recoilAmountY = 6.5f;
@@ -57,8 +60,8 @@ public class ThirdPersonCameraRotation : MonoBehaviour
     {
         if (_lookDelta.sqrMagnitude > _threshold && !_lockCameraPosition)
         {
-            _cinemachineTargetYaw += _lookDelta.x;
-            _cinemachineTargetPitch += _lookDelta.y;
+            _cinemachineTargetYaw += _lookDelta.x * mouseXSensitivity;
+            _cinemachineTargetPitch += _lookDelta.y * mouseYSensitivity;
         }
         
         _cinemachineTargetYaw = ClampAngle (_cinemachineTargetYaw, float.MinValue, float.MaxValue);
