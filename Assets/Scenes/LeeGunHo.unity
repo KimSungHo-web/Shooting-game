@@ -2171,6 +2171,7 @@ GameObject:
   - component: {fileID: 7777038571978438719}
   - component: {fileID: 7777038571978438720}
   - component: {fileID: 7777038571978438727}
+  - component: {fileID: 7777038571978438732}
   - component: {fileID: 7777038571978438725}
   - component: {fileID: 7777038571978438724}
   - component: {fileID: 7777038571978438726}
@@ -10311,7 +10312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunBarrelEnd: {fileID: 8545648136545439202}
   _faceLight: {fileID: 8944592461598141889}
-  _effectsDisplayTime: 0.2
+  _effectsDisplayTime: 0.05
   _fireRange: 100
   _shootableMask:
     serializedVersion: 2
@@ -10328,6 +10329,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c48f81b246ea04fbafc0d6bbac49f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7777038571978438732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2761261589889474691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27aeae5824461946b878b45dfa8cb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _healthChangeDelay: 0.5
 --- !u!1 &7781902785318087415
 GameObject:
   m_ObjectHideFlags: 0
