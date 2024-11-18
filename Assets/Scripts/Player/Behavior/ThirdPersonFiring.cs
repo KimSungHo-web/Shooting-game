@@ -7,6 +7,7 @@ public class ThirdPersonFiring : MonoBehaviour
 {
     [SerializeField] private GameObject _gunBarrelEnd;
     [SerializeField] private Light _faceLight;
+    [SerializeField] private ParticleSystem _hitParticles;
     [SerializeField] private float _effectsDisplayTime = 0.2f;
     [SerializeField] private float _fireRange;
     [SerializeField] private LayerMask _shootableMask;
@@ -73,6 +74,11 @@ public class ThirdPersonFiring : MonoBehaviour
         if (Physics.Raycast (fireRay, out RaycastHit hit, _fireRange, _shootableMask))
         {
             _gunLine.SetPosition (1, hit.point);
+
+            _hitParticles.transform.position = hit.point;
+            _hitParticles.transform.forward = hit.normal;
+            
+            _hitParticles.Play();
         }
         else
             _gunLine.SetPosition (1, fireRay.direction * _fireRange + fireRay.origin);
