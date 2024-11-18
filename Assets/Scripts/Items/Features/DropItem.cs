@@ -21,7 +21,13 @@ public class DropItem : MonoBehaviour
 
     private void Drop()
     {
-        List<ItemDroptableSO.DropItem> dropItems = dropTable.commonItems;
+        List<ItemDroptableSO.DropItem> dropItems = new List<ItemDroptableSO.DropItem>();
+
+        dropItems.AddRange(dropTable.commonItems);
+        dropItems.AddRange(dropTable.uncommonItems);
+        dropItems.AddRange(dropTable.rareItems);
+        dropItems.AddRange(dropTable.epicItems);
+        dropItems.AddRange(dropTable.legendaryItems);
 
         foreach (var dropItem in dropItems)
         {
@@ -31,7 +37,7 @@ public class DropItem : MonoBehaviour
                 DropAnimation dropanim =// droppedItem.GetComponent<DropAnimation>();
                  droppedItem.AddComponent<DropAnimation>();
             
-                dropanim.StartDropAnimation(transform.position);
+                dropanim.StartDropAnimation(transform.position,dropItem.item.rarity);
                
                 Debug.Log($"{dropItem.item}이(가) 드롭되었습니다.");
                 break; 
