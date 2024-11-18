@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558d3206870839b4f8a686fc27949d61, type: 3}
+  m_Name: DropTable
+  m_EditorClassIdentifier: 
+  commonItems:
+  - item: {fileID: 11400000, guid: a1f93e7cf03cad04fb24bfc553eb0c51, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: 2f067e5354713bc4cad33547174d9149, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: 910441fe5ac288f45b463b4d6de3b5e9, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: 1f0a83bc21164bf4994f8155093c20f7, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: 02b4e8b15e87aa24a8b312d55d7b2b6e, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: fed81d1fd04b0a647bc99983544ed067, type: 2}
+    dropChance: 10
+  - item: {fileID: 11400000, guid: 21da4fdfad17947418d0da041ebff149, type: 2}
+    dropChance: 10
+  uncommonItems: []
+  rareItems: []
+  epicItems: []
+  legendaryItems: []
