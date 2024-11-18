@@ -12,7 +12,7 @@ public class InventorySlot : MonoBehaviour
     {
         this.row = row;
         this.col = col;
-        itemImage.sprite = null;
+        //itemImage.sprite = null;
     }
 
     // 아이템을 슬롯에 배치하는 메서드
