@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zombunny
   m_EditorClassIdentifier: 
   startHealth: 120
-  attackDamage: 10
-  goldValue: 100
-  expValue: 1000
+  attackDamage: 30
+  goldValue: 30
+  expValue: 30
   disappearSpeed: 0.4

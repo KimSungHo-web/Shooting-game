@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ZomBear
   m_EditorClassIdentifier: 
   startHealth: 100
-  attackDamage: 100
-  goldValue: 100
-  expValue: 100
+  attackDamage: 10
+  goldValue: 10
+  expValue: 10
   disappearSpeed: 0.4

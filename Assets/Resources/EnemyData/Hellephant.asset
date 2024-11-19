@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6e6905b2009642b2bd24220410073, type: 3}
   m_Name: Hellephant
   m_EditorClassIdentifier: 
-  startHealth: 0
-  attackDamage: 0
-  goldValue: 0
-  expValue: 0
-  disappearSpeed: 0
+  startHealth: 100
+  attackDamage: 50
+  goldValue: 50
+  expValue: 50
+  disappearSpeed: 0.4

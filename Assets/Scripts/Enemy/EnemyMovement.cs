@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         if (enemyHealth.currentHealth > 0 && healthSystem.health > 0) 
         {
             //경로를 새롭게 쓴다(플레이어의 위치)
-            Vector3 targetPosition = playerMovement.CurrentPosition;
+            Vector3 targetPosition = GameManager.Instance.playerMovement.CurrentPosition;
             agent.SetDestination(targetPosition);
         }
         else 

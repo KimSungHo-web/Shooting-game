@@ -13,18 +13,12 @@ public class DropItem : MonoBehaviour
     [Header("몬스터 종류")]
     public MonsterType monsterType;
 
-
-    private void Start()
+    public void Drop()
     {
-       
-    }
-    public void OnDeath()
-    {
-        Drop();
+        DropItems();
         DropGoldAndExp();
     }
-
-    private void Drop()
+    private void DropItems()
     {
 
         List<ItemDroptableSO.DropItem> dropItems = new List<ItemDroptableSO.DropItem>();

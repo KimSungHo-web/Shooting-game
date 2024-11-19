@@ -21,7 +21,10 @@ public class ThridPersonMovement : MonoBehaviour
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
     }
-
+    private void Start()
+    {
+        GameManager.Instance.playerMovement = this;
+    }
     private void OnEnable()
     {
         _playerController.MoveEvent += PlayerController_MoveEvent;
