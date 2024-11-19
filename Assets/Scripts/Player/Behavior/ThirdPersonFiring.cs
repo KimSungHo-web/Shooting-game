@@ -15,6 +15,7 @@ public class ThirdPersonFiring : MonoBehaviour
     [SerializeField] private float _defaultSpreadRange = 5f;
     
     private PlayerController _playerController;
+    private PlayerStats _playerStats;
     private Camera _mainCamera;
 
     private ParticleSystem _gunParticles;
@@ -27,6 +28,7 @@ public class ThirdPersonFiring : MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
         
         _gunParticles = _gunBarrelEnd.GetComponent<ParticleSystem>();
@@ -81,6 +83,11 @@ public class ThirdPersonFiring : MonoBehaviour
                 _hitBloodParticles.transform.position = hit.point;
                 _hitBloodParticles.transform.forward = hit.normal;
                 _hitBloodParticles.Play();
+
+                if (hit.collider.gameObject.TryGetComponent (out EnemyHealth enemyHealth))
+                {
+                    enemyHealth.TakeDamage (_playerStats.attackDamage, hit.point);
+                }
             }
             else if (IsLayerMatched (LayerMask.GetMask ("Obstacle"), hit.collider.gameObject.layer))
             {
