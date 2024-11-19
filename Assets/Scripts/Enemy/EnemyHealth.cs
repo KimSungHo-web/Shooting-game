@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour
 
     ParticleSystem hitParticles; // 히트 파티클
     CapsuleCollider capsuleCollider;
-    private Testgold testgold;
     DropItem dropitem;
 
     
@@ -24,7 +23,6 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        testgold = FindObjectOfType<Testgold>();
 
         EnemyDataManager enemydatamanager = GetComponent<EnemyDataManager>();
         enemyData = enemydatamanager.enemyData;
@@ -43,12 +41,13 @@ public class EnemyHealth : MonoBehaviour
         {
             TakeDamage(20, transform.position); // T 키를 누르면 20 데미지
         }
+        //테스트를 위해 추가한 코드입니다
 
         if (isDisappearing)
         {
             transform.Translate(-Vector3.up *enemyData.disappearSpeed * Time.deltaTime);
         }
-        //테스트를 위해 추가한 코드입니다
+
     }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
@@ -85,8 +84,7 @@ public class EnemyHealth : MonoBehaviour
 
         isDisappearing = true;
 
-        testgold.AddGold(enemyData.goldValue);
-        testgold.AddEXP(enemyData.expValue);
+        GameManager.Instance.OnEnemyDeath(enemyData);
         Destroy(gameObject, 2f);
     }
 }

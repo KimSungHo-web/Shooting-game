@@ -20,6 +20,8 @@ public class ThridPersonMovement : MonoBehaviour
 
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
+
+        GameManager.Instance.playerMovement = this;
     }
 
     private void OnEnable()

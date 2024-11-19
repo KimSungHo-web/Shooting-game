@@ -255,6 +255,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGold: 0
   currentEXP: 0
+--- !u!1 &654313019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8849470354196364854, guid: 307f278f45d30a64cb1340226c082737,
+    type: 3}
+  m_PrefabInstance: {fileID: 1402618288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &657490259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -915,6 +921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
         type: 3}
+      propertyPath: InventoryUI
+      value: 
+      objectReference: {fileID: 654313019}
+    - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
+        type: 3}
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1402618289}
@@ -1308,7 +1319,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b,
+        type: 3}
     - target: {fileID: 3264595544738295403, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_FillMethod
@@ -1323,7 +1335,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b,
+        type: 3}
     - target: {fileID: 3747361920828143355, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_FillAmount
@@ -1334,6 +1347,12 @@ PrefabInstance:
       propertyPath: m_FillMethod
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5024537043803881814, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1997803578, guid: 0d5e657ee5a074e4baa53d5b248a01d2,
+        type: 3}
     - target: {fileID: 6246997382424691714, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1448,7 +1467,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b,
+        type: 3}
     - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_Maskable
@@ -1490,6 +1510,54 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1927257457}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2146987303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146987304}
+  - component: {fileID: 2146987305}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146987304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146987303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146987305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146987303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f533c61001a724f84386f0042d74a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 0}
+  playerMovement: {fileID: 0}
+  currentGold: 0
+  currentEXP: 0
 --- !u!1001 &5947862814529227412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1577,3 +1645,4 @@ SceneRoots:
   - {fileID: 1018470237}
   - {fileID: 876246032}
   - {fileID: 949381215}
+  - {fileID: 2146987304}

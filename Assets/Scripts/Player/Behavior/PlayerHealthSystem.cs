@@ -20,6 +20,8 @@ public class PlayerHealthSystem : MonoBehaviour
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
         
         _health = maxHealth;
+
+        GameManager.Instance.playerHealth = this;
     }
 
     private void Update()
