@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6381594227379863297}
   - component: {fileID: 5471960567744989761}
   - component: {fileID: 3322310362366449049}
-  - component: {fileID: 6895988586653335584}
-  - component: {fileID: 3877381061534723573}
   - component: {fileID: 8873499475353419846}
+  - component: {fileID: 5051525729211808748}
+  - component: {fileID: 211021111123139107}
   m_Layer: 0
   m_Name: Exp(midium)
   m_TagString: Untagged
@@ -130,34 +130,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6895988586653335584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3793543088242456738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 557088a3f0545b449bb07a62688be093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinMoidifier: 0.3
-  MaxMoidifier: 0.7
-  Loot: {fileID: 7261395898001448339}
-  Target: {fileID: 0}
---- !u!114 &3877381061534723573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3793543088242456738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae2aac7a8ec701f4db3601b92324489a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!96 &8873499475353419846
 TrailRenderer:
   serializedVersion: 3
@@ -271,6 +243,34 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &5051525729211808748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793543088242456738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7a5901c4b5cee4a97756409db641d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinMoidifier: 7
+  MaxMoidifier: 11
+  Loot: {fileID: 0}
+  Target: {fileID: 0}
+--- !u!114 &211021111123139107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3793543088242456738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e785b29c40ff84e98a0f286abadb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4182120493159027298
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7261395898001448339}
   m_Layer: 0
-  m_Name: ExpDropRot(midium)
+  m_Name: ExpM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

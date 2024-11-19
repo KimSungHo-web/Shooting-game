@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    // 스프라이트 로드
-    // Sprite icon = ItemManager.Instance.Load<Sprite>("Icons/AK74");
-
-    // 아이템 데이터 로드
-    //ItemSO itemData = ItemManager.Instance.Load<ItemSO>("SO_Items/AK74");
+    //경로는 Assets/Resources/Prefabs/Example.fbx
+    //프리팹 로드
+    //GameObject Prefab = ItemManager.Instance.Instantiate("이름");
 
     private Dictionary<string, GameObject> prefabDict = new Dictionary<string, GameObject>();
     private Dictionary<string, Sprite> spriteDict = new Dictionary<string, Sprite>();
@@ -35,29 +33,32 @@ public class ItemManager : Singleton<ItemManager>
             soDict.Add(path, soData);
             return soData as T;
         }
+        else if (typeof(T) == typeof(GameObject))
+        {
+            if (prefabDict.TryGetValue(path, out GameObject prefab))
+                return prefab as T;
+
+            GameObject loadedPrefab = Resources.Load<GameObject>(path);
+            if (loadedPrefab != null)
+            {
+                prefabDict.Add(path, loadedPrefab);
+            }
+            return loadedPrefab as T;
+        }
 
         return Resources.Load<T>(path);
     }
-    public T GetSOData<T>(string path, SODataType dataType = SODataType.None, SOItemDataType itemType = SOItemDataType.None) where T : ScriptableObject
+    public GameObject Instantiate(string path, Transform parent = null)
     {
-        if (dataType == SODataType.Item && itemType != SOItemDataType.None)
+        GameObject prefab = Load<GameObject>($"Prefabs/{path}");
+        if (prefab == null)
         {
-            return Load<T>($"SO_Datas/{dataType}/{itemType}/{path}");
-        }
-        else if (dataType != SODataType.None)
-        {
-            return Load<T>($"SO_Datas/{dataType}/{path}");
+            Debug.Log($"Failed to load prefab : {path}");
+            return null;
         }
 
-        return Load<T>($"SO_Datas/{path}");
+        return Instantiate(prefab, parent);
     }
-
-    public T GetSOItemData<T>(string name, SOItemDataType itemType) where T : ScriptableObject
-    {
-        return GetSOData<T>(name, SODataType.Item, itemType);
-    }
-
-
 
 
 }
