@@ -9,11 +9,6 @@ public class DropItem : MonoBehaviour
     [Header("드롭 테이블")]
     public ItemDroptableSO dropTable;
 
-    //테스트용
-    private void Start()
-    {
-        Drop();
-    }
     public void OnDeath()
     {
         Drop();
@@ -22,6 +17,7 @@ public class DropItem : MonoBehaviour
     private void Drop()
     {
         List<ItemDroptableSO.DropItem> dropItems = new List<ItemDroptableSO.DropItem>();
+       
 
         dropItems.AddRange(dropTable.commonItems);
         dropItems.AddRange(dropTable.uncommonItems);
