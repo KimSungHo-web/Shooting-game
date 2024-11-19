@@ -8,12 +8,14 @@ public class ThirdPersonFiring : MonoBehaviour
     [SerializeField] private GameObject _gunBarrelEnd;
     [SerializeField] private Light _faceLight;
     [SerializeField] private ParticleSystem _hitParticles;
+    [SerializeField] private ParticleSystem _hitBloodParticles;
     [SerializeField] private float _effectsDisplayTime = 0.2f;
     [SerializeField] private float _fireRange;
     [SerializeField] private LayerMask _shootableMask;
     [SerializeField] private float _defaultSpreadRange = 5f;
     
     private PlayerController _playerController;
+    private PlayerStats _playerStats;
     private Camera _mainCamera;
 
     private ParticleSystem _gunParticles;
@@ -26,6 +28,7 @@ public class ThirdPersonFiring : MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
+        _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
         
         _gunParticles = _gunBarrelEnd.GetComponent<ParticleSystem>();
@@ -75,10 +78,23 @@ public class ThirdPersonFiring : MonoBehaviour
         {
             _gunLine.SetPosition (1, hit.point);
 
-            _hitParticles.transform.position = hit.point;
-            _hitParticles.transform.forward = hit.normal;
-            
-            _hitParticles.Play();
+            if (IsLayerMatched (LayerMask.GetMask ("Shootable"), hit.collider.gameObject.layer))
+            {
+                _hitBloodParticles.transform.position = hit.point;
+                _hitBloodParticles.transform.forward = hit.normal;
+                _hitBloodParticles.Play();
+
+                if (hit.collider.gameObject.TryGetComponent (out EnemyHealth enemyHealth))
+                {
+                    enemyHealth.TakeDamage (_playerStats.attackDamage, hit.point);
+                }
+            }
+            else if (IsLayerMatched (LayerMask.GetMask ("Obstacle"), hit.collider.gameObject.layer))
+            {
+                _hitParticles.transform.position = hit.point;
+                _hitParticles.transform.forward = hit.normal;
+                _hitParticles.Play();    
+            }
         }
         else
             _gunLine.SetPosition (1, fireRay.direction * _fireRange + fireRay.origin);
@@ -92,6 +108,9 @@ public class ThirdPersonFiring : MonoBehaviour
        _gunLight.enabled = false;
        _faceLight.enabled = false;
     }
-    
-    
+
+    private static bool IsLayerMatched (int mask, int target)
+    {
+        return mask == (mask | 1 << target);
+    }
 }

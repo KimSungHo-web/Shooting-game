@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f22c88752e59643aeacf5593aacb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canLook: 1
 --- !u!114 &5055709644580742872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +446,7 @@ MonoBehaviour:
   _fireRange: 100
   _shootableMask:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 64
   _defaultSpreadRange: 5
 --- !u!114 &4624719221031762251
 MonoBehaviour:
