@@ -10307,4 +10307,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTable: {fileID: 11400000, guid: 89a7ffbcedaa25c40977da6aa42187c0, type: 2}
-  monsterType: 0
+  monsterType: 3
