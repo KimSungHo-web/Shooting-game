@@ -54,17 +54,17 @@ public class DropItem : MonoBehaviour
         switch (monsterType)
         {
             case MonsterType.Small:
-                goldAmount = Random.Range(1, 5);
-                expAmount = Random.Range(1, 3);
+                goldAmount = 1;
+                expAmount = 1;
                 droppedExp = ItemManager.Instance.Instantiate("ExpS");
                 break;
             case MonsterType.Medium:
-                goldAmount = Random.Range(5, 15);
-                expAmount = Random.Range(1, 2);
+                goldAmount = 3;
+                expAmount = 1;
                 droppedExp = ItemManager.Instance.Instantiate("ExpM");
                 break;
             case MonsterType.Large:
-                goldAmount = Random.Range(15, 30);
+                goldAmount = 5;
                 expAmount = 1;
                 droppedExp = ItemManager.Instance.Instantiate("ExpL");
 

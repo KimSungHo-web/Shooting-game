@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    //경로는 Assets/Resources/Prefabs/Example.fbx
     //프리팹 로드
+    //경로는 Assets/Resources/Prefabs/Example.fbx이여야함
     //GameObject Prefab = ItemManager.Instance.Instantiate("이름");
 
     private Dictionary<string, GameObject> prefabDict = new Dictionary<string, GameObject>();
@@ -59,6 +59,9 @@ public class ItemManager : Singleton<ItemManager>
 
         return Instantiate(prefab, parent);
     }
-
+    public ItemSO GetItemSO(string itemName)
+    {
+        return Load<ItemSO>($"SO_Items/{itemName}");
+    }
 
 }

@@ -7,7 +7,7 @@ public class DropAnimation : MonoBehaviour
 {
     public float baseJumpHeight = 2.0f;
     public float baseDropTime = 1.0f;
-    public Vector3 randomDropOffset = new Vector3(1.5f, 0f, 1.5f);
+    public Vector3 randomDropOffset = new Vector3(1.5f, 1f, 1.5f);
     public Vector3 itemscale = new Vector3(3f, 3f, 3f);
 
     private float _jumpHeight;
