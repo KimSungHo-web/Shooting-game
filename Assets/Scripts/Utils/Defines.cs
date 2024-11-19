@@ -5,7 +5,8 @@ namespace Defines
         None,
         Equipable,
         Consumable,
-        Passive
+        Passive,
+        Resource
     }
 
     public enum EquipType
@@ -55,5 +56,13 @@ namespace Defines
         Consumable,
         Weapon,
         Passive
+    }
+
+    public enum MonsterType
+    {
+        None,
+        Small,
+        Medium,
+        Large
     }
 }

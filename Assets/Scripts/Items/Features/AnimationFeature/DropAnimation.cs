@@ -82,6 +82,7 @@ public class DropAnimation : MonoBehaviour
             transform.position = currentPosition;
 
             transform.Rotate(Vector3.right * 360 * Time.deltaTime);
+            transform.Rotate(Vector3.up * 360 * Time.deltaTime);
 
             yield return null;
         }
