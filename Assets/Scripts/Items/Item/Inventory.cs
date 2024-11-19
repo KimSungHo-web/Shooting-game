@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject InventoryUI;
     public GameObject slotPrefab;
     public GameObject inventoryPanel;
 
@@ -16,6 +17,8 @@ public class Inventory : MonoBehaviour
     {
         gridSlots = new InventorySlot[_row, _col];
         InitializeInventory();
+        InventoryUI.SetActive(false);
+        // Inventory Event register
     }
 
     void InitializeInventory()
@@ -31,6 +34,8 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public void Toggle() => InventoryUI.SetActive(!InventoryUI.activeInHierarchy);
 
     // 아이템 배치 메서드
     public bool AddItem(Item item)
