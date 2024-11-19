@@ -17,3 +17,4 @@ MonoBehaviour:
   goldValue: 10
   expValue: 10
   disappearSpeed: 0.4
+  ExpPath: ExpM

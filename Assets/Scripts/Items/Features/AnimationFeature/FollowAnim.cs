@@ -17,6 +17,8 @@ public class FollowAnim : MonoBehaviour
         Loot = transform.parent;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Target = player.transform;
+
+        _isFollowing = true;
     }
 
     private void OnTriggerEnter(Collider other)
