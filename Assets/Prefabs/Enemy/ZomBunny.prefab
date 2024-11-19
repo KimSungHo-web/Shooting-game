@@ -5381,7 +5381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTable: {fileID: 11400000, guid: 89a7ffbcedaa25c40977da6aa42187c0, type: 2}
-  monsterType: 2
+  monsterType: 1
 --- !u!1 &6206191265592872238
 GameObject:
   m_ObjectHideFlags: 0
