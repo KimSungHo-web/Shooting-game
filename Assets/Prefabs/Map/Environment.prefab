@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232876204633027066}
   - component: {fileID: 1017715728451736607}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: StoolCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 2687865970012952638}
   - component: {fileID: 3279051579685900704}
   - component: {fileID: 1433154581145015893}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4216362698868241672}
   - component: {fileID: 6417205040608000145}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: BloxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7727202575469969125}
   - component: {fileID: 3870552696149233148}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: BloxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 2343515997307688328}
   - component: {fileID: 7200146944575864599}
   - component: {fileID: 882167811533194985}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Drawers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092963229775127650}
   - component: {fileID: 3599124629606075411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 3669684438479595434}
   - component: {fileID: 1709546742827062017}
   - component: {fileID: 2712146737774116799}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078190617130416711}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 6538562480319451673}
   - component: {fileID: 8984710443143509790}
   - component: {fileID: 3664477136987547986}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3734735682623037066}
   - component: {fileID: 4233404995750083337}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: DollArmCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2539240561018264645}
   - component: {fileID: 987412303467997652}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: TrainCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5706248953653603604}
   - component: {fileID: 5423472253201902291}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 2298661540957256470}
   - component: {fileID: 291410873834972604}
   - component: {fileID: 9094779879545909638}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8182544684894985828}
   - component: {fileID: 5553261035164735890}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1005,7 +1005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4259168388462832417}
   - component: {fileID: 300903921149958784}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,8 @@ GameObject:
   - component: {fileID: 7639147090124618043}
   - component: {fileID: 6218682190317331487}
   - component: {fileID: 8864178717452669486}
-  m_Layer: 9
+  - component: {fileID: 8575579668162450779}
+  m_Layer: 6
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1519,6 +1520,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 2.91, y: -13.5, z: 2.3}
+--- !u!65 &8575579668162450779
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296538717306318314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.776535, y: 37.519806, z: 0.55023277}
+  m_Center: {x: -2.5983906, y: 6.7860203, z: -0.22488369}
 --- !u!1 &2330619575983147944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1552,7 @@ GameObject:
   - component: {fileID: 5506803076268123409}
   - component: {fileID: 6409788951530841322}
   - component: {fileID: 7618218845215353958}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 392349328581212574}
   - component: {fileID: 8421309956508078390}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1669,7 +1691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6012160515557428217}
   - component: {fileID: 1040095473932667682}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: StoolCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,7 +1747,7 @@ GameObject:
   - component: {fileID: 2823255994751059721}
   - component: {fileID: 4674407319575103694}
   - component: {fileID: 4393456051158835417}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6030540039723991215}
   - component: {fileID: 7281366249024001407}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,7 +1885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6993165166749550553}
   - component: {fileID: 2017509961747562046}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1935,7 +1957,8 @@ GameObject:
   - component: {fileID: 2727013179997059562}
   - component: {fileID: 1185253252786247977}
   - component: {fileID: 6551878199857088284}
-  m_Layer: 9
+  - component: {fileID: 5184784064447108897}
+  m_Layer: 6
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2377,6 +2400,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 2.91, y: -13.5, z: 2.3}
+--- !u!65 &5184784064447108897
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329050298797878031}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.77275, y: 39.403522, z: 0.8663354}
+  m_Center: {x: -2.7015529, y: 7.7426243, z: -0.33629596}
 --- !u!1 &3631322620028660408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,7 +2431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3159487329332990876}
   - component: {fileID: 1956813390710764895}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38909974613077968}
   - component: {fileID: 2436528740897791947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2495,7 +2539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8070250619608988400}
   - component: {fileID: 151363520481359245}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: BloxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2551,7 +2595,7 @@ GameObject:
   - component: {fileID: 3841101404327789234}
   - component: {fileID: 4717558664288082737}
   - component: {fileID: 24668621364613776}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Hearse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2676,7 +2720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3471593128130289543}
   - component: {fileID: 9004006036557005452}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2729,7 +2773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1371306527897610346}
   - component: {fileID: 2231429218040028488}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2783,7 +2827,7 @@ GameObject:
   - component: {fileID: 5925586757142545472}
   - component: {fileID: 1294995919309706790}
   - component: {fileID: 7057588790502821990}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Blox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2870,7 +2914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6938548904793375578}
   - component: {fileID: 248880312229741924}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: DollArmCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,7 +2967,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7266017290922694810}
   - component: {fileID: 3969555744357909815}
-  m_Layer: 9
+  - component: {fileID: 9099607782561678463}
+  m_Layer: 6
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2966,6 +3011,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 51, y: 3, z: 1}
   m_Center: {x: -1, y: -13.5, z: -0.6}
+--- !u!65 &9099607782561678463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871252864221137222}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 51, y: 37.3, z: 0.4}
+  m_Center: {x: -1, y: 6.68, z: -0.3}
 --- !u!1 &4940095655379102208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,7 +3042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5451424010638746863}
   - component: {fileID: 820004088607888473}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3097,7 @@ GameObject:
   - component: {fileID: 7197566551851984817}
   - component: {fileID: 2334607260708090004}
   - component: {fileID: 4917576667425716661}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: SpinningTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3136483293036211902}
   - component: {fileID: 8892748087942322470}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3191,7 +3257,7 @@ GameObject:
   - component: {fileID: 664267979327178260}
   - component: {fileID: 2931390454063959559}
   - component: {fileID: 1032665032020308632}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3274,7 +3340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3869768506631570055}
   - component: {fileID: 2695287605304143299}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ArchesCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3328,7 +3394,7 @@ GameObject:
   - component: {fileID: 9126341693281548116}
   - component: {fileID: 1099048535272753777}
   - component: {fileID: 1981613487095273028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3412,7 +3478,7 @@ GameObject:
   - component: {fileID: 6512988824733504532}
   - component: {fileID: 5469003679174014806}
   - component: {fileID: 617243174144500375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3496,7 +3562,7 @@ GameObject:
   - component: {fileID: 6078317138899701335}
   - component: {fileID: 8373400573624831935}
   - component: {fileID: 2307784502484499494}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Firetruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3583,7 +3649,8 @@ GameObject:
   m_Component:
   - component: {fileID: 58572466703253188}
   - component: {fileID: 6797876938728032187}
-  m_Layer: 9
+  - component: {fileID: 5937203610189042421}
+  m_Layer: 6
   m_Name: WallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3626,6 +3693,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 51, y: 3, z: 1}
   m_Center: {x: -1, y: -13.5, z: -0.6}
+--- !u!65 &5937203610189042421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6954750321382966904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50.181595, y: 37.964832, z: 1}
+  m_Center: {x: -1.0338229, y: 6.959177, z: -0.0000011314565}
 --- !u!1 &7022904997334324605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5457837165099589782}
   - component: {fileID: 5223450233623469632}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: TrainCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3692,7 +3780,8 @@ GameObject:
   - component: {fileID: 7909378051952896027}
   - component: {fileID: 9010667267489868615}
   - component: {fileID: 5783262829703413828}
-  m_Layer: 0
+  - component: {fileID: 2282201809899705559}
+  m_Layer: 6
   m_Name: Planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3765,6 +3854,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2282201809899705559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134903206106602904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 50.392117, y: 0.70991814, z: 50.26876}
+  m_Center: {x: 0.039637033, y: -0.2781124, z: -0.07046104}
 --- !u!1 &7521248641583695046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,7 +3885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2439956704612869071}
   - component: {fileID: 7744003587646986726}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: BloxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3829,7 +3939,7 @@ GameObject:
   - component: {fileID: 8510629862355934844}
   - component: {fileID: 3564343550351957709}
   - component: {fileID: 2322616025087115773}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3912,7 +4022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3199931065970526375}
   - component: {fileID: 3378624491717332981}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: StoolCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3969,7 +4079,7 @@ GameObject:
   - component: {fileID: 871712355925650106}
   - component: {fileID: 1516144165923768614}
   - component: {fileID: 5618116249648901192}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: DollArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4076,7 +4186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5713171149164633635}
   - component: {fileID: 4463101790779130127}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: StoolCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4133,7 +4243,7 @@ GameObject:
   - component: {fileID: 1979273264483250563}
   - component: {fileID: 7876941429467239674}
   - component: {fileID: 3383712548329459542}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Dollhouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4238,7 +4348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8051785176216937064}
   - component: {fileID: 8456295029405472239}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: FiretruckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4292,7 +4402,7 @@ GameObject:
   - component: {fileID: 3969562956554386566}
   - component: {fileID: 4370816844110886}
   - component: {fileID: 1947985094491676916}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Train
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4377,7 +4487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8116160831250418083}
   - component: {fileID: 3426709117679380703}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ClockCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4430,7 +4540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102720837250607536}
   - component: {fileID: 993481307582446294}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4483,7 +4593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7600542196924211613}
   - component: {fileID: 5778203419364415606}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: DollhouseDoorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4536,7 +4646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3607950242680037408}
   - component: {fileID: 2491942964230863501}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4589,7 +4699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1834593151567356510}
   - component: {fileID: 8585002231342299498}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: RobotCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4643,7 +4753,7 @@ GameObject:
   - component: {fileID: 3410204224569061380}
   - component: {fileID: 5392434379392301455}
   - component: {fileID: 6807938988051421739}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Stool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4732,7 +4842,7 @@ GameObject:
   - component: {fileID: 8662913707361570878}
   - component: {fileID: 3978809981007179737}
   - component: {fileID: 7233052287588937193}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Arches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4842,7 +4952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5708318005168294301}
   - component: {fileID: 6580286248136434057}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: DollArmCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
