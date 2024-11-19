@@ -152,8 +152,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1927257458}
   - {fileID: 1402618290}
+  - {fileID: 1927257458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586867026
@@ -535,11 +535,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerFlowCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313395016843203549, guid: 4b54dfcbb9a835b4b8dd0374a99caa97,
-        type: 3}
-      propertyPath: m_TagString
-      value: PlayerCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7666908529654007237, guid: 4b54dfcbb9a835b4b8dd0374a99caa97,
         type: 3}
@@ -1398,7 +1393,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 759d62968dba82548b19bf755d59ba81, type: 3}
 --- !u!224 &1927257458 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6246997382424691714, guid: 759d62968dba82548b19bf755d59ba81,
+  m_CorrespondingSourceObject: {fileID: 5548660232248332954, guid: 759d62968dba82548b19bf755d59ba81,
     type: 3}
   m_PrefabInstance: {fileID: 1927257457}
   m_PrefabAsset: {fileID: 0}
