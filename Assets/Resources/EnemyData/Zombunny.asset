@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6e6905b2009642b2bd24220410073, type: 3}
   m_Name: Zombunny
   m_EditorClassIdentifier: 
-  startHealth: 120
+  startHealth: 30
   attackDamage: 30
   goldValue: 30
   expValue: 30

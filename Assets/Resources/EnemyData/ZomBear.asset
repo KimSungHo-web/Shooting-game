@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d6e6905b2009642b2bd24220410073, type: 3}
   m_Name: ZomBear
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 10
   attackDamage: 10
   goldValue: 10
   expValue: 10
