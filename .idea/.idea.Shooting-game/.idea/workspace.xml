@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbeda426-a146-4e82-a71d-13c7aa929702" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Shooting-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Shooting-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LeeGunHo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LeeGunHo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Behavior/ThirdPersonFiring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Behavior/ThirdPersonFiring.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test/TestSceneLGH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test/TestSceneLGH.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +100,7 @@
       <updated>1731722760970</updated>
       <workItem from="1731722762417" duration="3936000" />
       <workItem from="1731807621039" duration="3866000" />
+      <workItem from="1731981801324" duration="27000" />
     </task>
     <servers />
   </component>
