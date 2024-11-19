@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbeda426-a146-4e82-a71d-13c7aa929702" name="Changes" comment="" />
+    <list default="true" id="cbeda426-a146-4e82-a71d-13c7aa929702" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/InventoryUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/InventoryUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test/TestSceneLGH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test/TestSceneLGH.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

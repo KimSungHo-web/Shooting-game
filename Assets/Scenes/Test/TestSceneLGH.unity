@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTable: {fileID: 11400000, guid: 89a7ffbcedaa25c40977da6aa42187c0, type: 2}
+  monsterType: 0
 --- !u!1001 &142885820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,10 +240,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1927257458}
   - {fileID: 1402618290}
+  - {fileID: 278070078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &278070078 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5548660232248332954, guid: 759d62968dba82548b19bf755d59ba81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1927257457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586867026
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +694,11 @@ PrefabInstance:
       propertyPath: _hitParticles
       value: 
       objectReference: {fileID: 1028708634}
+    - target: {fileID: 2326094744605165194, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
+        type: 3}
+      propertyPath: _shootableMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3968928291614023984, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
         type: 3}
       propertyPath: m_Name
@@ -966,6 +978,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
+        type: 3}
+      propertyPath: InventoryUI
+      value: 
+      objectReference: {fileID: 8849470354196364854, guid: 307f278f45d30a64cb1340226c082737,
+        type: 3}
     - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
         type: 3}
       propertyPath: inventoryPanel
@@ -1490,12 +1508,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 759d62968dba82548b19bf755d59ba81, type: 3}
---- !u!224 &1927257458 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6246997382424691714, guid: 759d62968dba82548b19bf755d59ba81,
-    type: 3}
-  m_PrefabInstance: {fileID: 1927257457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5780394083887383825
 PrefabInstance:
   m_ObjectHideFlags: 0
