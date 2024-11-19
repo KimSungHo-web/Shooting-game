@@ -10164,6 +10164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e91ba2c4b1fe742ae4bb17ed1b1b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 0}
+  playerMovement: {fileID: 0}
+  healthSystem: {fileID: 0}
+  enemyHealth: {fileID: 0}
 --- !u!114 &3534893925704208004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10177,6 +10181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTable: {fileID: 11400000, guid: 89a7ffbcedaa25c40977da6aa42187c0, type: 2}
+  monsterType: 1
 --- !u!1 &9112558492628703311
 GameObject:
   m_ObjectHideFlags: 0

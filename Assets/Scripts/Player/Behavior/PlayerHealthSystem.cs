@@ -18,12 +18,13 @@ public class PlayerHealthSystem : MonoBehaviour
     private void Awake()
     {
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
-        
-        _health = maxHealth;
 
+        _health = maxHealth;
+    }
+    private void Start()
+    {
         GameManager.Instance.playerHealth = this;
     }
-
     private void Update()
     {
         if (_healthChangeDelayCounter < _healthChangeDelay)
@@ -41,6 +42,8 @@ public class PlayerHealthSystem : MonoBehaviour
             _health = Mathf.Clamp (_health + amount, 0, _playerStats.maxHealth);
             HealthChangedEvent.Invoke (_health);
 
+            GameManager.Instance.playerUI.UpdateHealth(_health, maxHealth);
+
             if (_health == 0)
             {
                 DieEvent.Invoke();
@@ -51,5 +54,8 @@ public class PlayerHealthSystem : MonoBehaviour
 
         return false;
     }
-    
+    public void UpdateStamina(int currentStamina, int maxStamina)
+    {
+        GameManager.Instance.playerUI.UpdateStamina(currentStamina, maxStamina);
+    }
 }
