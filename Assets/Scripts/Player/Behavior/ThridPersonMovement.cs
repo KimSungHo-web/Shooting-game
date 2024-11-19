@@ -12,6 +12,7 @@ public class ThridPersonMovement : MonoBehaviour
 
     private Vector2 _inputDirection;
 
+    public Vector3 CurrentPosition => transform.position; // 플레이어의 현재 위치 반환(KSH추가)
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
