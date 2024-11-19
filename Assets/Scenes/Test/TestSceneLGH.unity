@@ -1509,6 +1509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossHairUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3527226526295571641, guid: 132716aea19e89c4fa2b6760fc75c72f,
+        type: 3}
+      propertyPath: m_Name
+      value: Dot
+      objectReference: {fileID: 0}
     - target: {fileID: 5152273775199469663, guid: 132716aea19e89c4fa2b6760fc75c72f,
         type: 3}
       propertyPath: m_Pivot.x
