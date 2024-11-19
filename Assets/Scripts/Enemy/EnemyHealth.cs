@@ -14,6 +14,9 @@ public class EnemyHealth : MonoBehaviour
     ParticleSystem hitParticles; // 히트 파티클
     CapsuleCollider capsuleCollider;
     private Testgold testgold;
+    DropItem dropitem;
+
+    
 
     void Awake()
     {
@@ -27,6 +30,9 @@ public class EnemyHealth : MonoBehaviour
         enemyData = enemydatamanager.enemyData;
 
         currentHealth = enemyData.startHealth;
+
+        dropitem = GetComponent<DropItem>();
+        
     }
 
     void Update()
@@ -72,6 +78,8 @@ public class EnemyHealth : MonoBehaviour
     }
     public void StartSinking() //Dead 애니메이션 이벤트가 저거로 설정되어잇는데 FBX파일 자체에 저장되어잇는거라 제거를 못함
     {
+        dropitem.Drop();
+
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
 
