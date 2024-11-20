@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private EnemyData enemyData;
+    private EnemySpawner spawner;
     public int currentHealth;
     bool isDead;
     bool isDisappearing;
@@ -23,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-
+        spawner = FindObjectOfType<EnemySpawner>();
         EnemyDataManager enemydatamanager = GetComponent<EnemyDataManager>();
         enemyData = enemydatamanager.enemyData;
 
@@ -85,6 +86,7 @@ public class EnemyHealth : MonoBehaviour
         isDisappearing = true;
 
         GameManager.Instance.OnEnemyDeath(enemyData);
+        spawner.RemoveEnemy(gameObject);
         Destroy(gameObject, 2f);
     }
 }

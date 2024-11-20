@@ -41,7 +41,13 @@ public class EnemyAttack : MonoBehaviour
             playerInRange = true; //콜라이더가 겹쳐지면 플레이어가 적의 공격 범위 안에 들어온것으로 판단
         }
     }
-
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            playerInRange = false; // 콜라이더에서 나가면 플레이어가 사거리 밖으로 나갔음을 판단
+        }
+    }
     void Update()
     {
         attacktimer += Time.deltaTime; // 공격 시간 누적

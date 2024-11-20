@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("Enemy Settings")]
     public GameObject[] enemyPrefabs; // 3종류의 적 프리팹 배열
-    public int maxEnemies = 10; // 최대 적 수
+    public int maxEnemies = 100; // 최대 적 수
     public float spawnInterval = 5f; // 적 생성 간격
     public float spawnRadius = 10f; // 생성 반경
     public LayerMask navMeshLayerMask; // NavMesh Layer Mask
@@ -70,27 +70,15 @@ public class EnemySpawner : MonoBehaviour
         {
             // 보스 크기 설정
             newEnemy.transform.localScale = Vector3.Scale(newEnemy.transform.localScale, minibossScaleMultiplier);
-
-            // EnemyDataManager를 통해 능력치 조정
-            EnemyDataManager dataManager = newEnemy.GetComponent<EnemyDataManager>();
-            if (dataManager != null && dataManager.enemyData != null)
-            {
-                // 보스 능력치 조정
-                EnemyData minibossData = ScriptableObject.CreateInstance<EnemyData>();
-                minibossData.startHealth = Mathf.RoundToInt(dataManager.enemyData.startHealth * minibossStatMultiplier);
-                minibossData.attackDamage = Mathf.RoundToInt(dataManager.enemyData.attackDamage * minibossStatMultiplier);
-                minibossData.goldValue = Mathf.RoundToInt(dataManager.enemyData.goldValue * minibossStatMultiplier);
-                minibossData.expValue = Mathf.RoundToInt(dataManager.enemyData.expValue * minibossStatMultiplier);
-                minibossData.disappearSpeed = dataManager.enemyData.disappearSpeed;
-
-                // 보스 데이터를 적용
-                dataManager.enemyData = minibossData;
-            }
-
-            Debug.Log($"미니보스가 생성되었습니다! {newEnemy.name}");
         }
-
         // 생성된 적 리스트에 추가
         spawnedEnemies.Add(newEnemy);
+    }
+    public void RemoveEnemy(GameObject enemy)
+    {
+        if (spawnedEnemies.Contains(enemy))
+        {
+            spawnedEnemies.Remove(enemy);
+        }
     }
 }
