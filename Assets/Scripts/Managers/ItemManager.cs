@@ -61,7 +61,7 @@ public class ItemManager : Singleton<ItemManager>
     }
     public ItemSO GetItemSO(string itemName)
     {
-        return Load<ItemSO>($"SO_Items/{itemName}");
+        return Load<ItemSO>($"ItemSOData/Resource/{itemName}");
     }
 
 }

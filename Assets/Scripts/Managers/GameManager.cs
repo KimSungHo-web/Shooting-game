@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ItemDroptableSO;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Management")]
     public PlayerUI playerUI;
+
+    [Header("Item Management")]
+    private DropItem dropitem; 
 
     private void Awake()
     {
@@ -75,11 +79,16 @@ public class GameManager : MonoBehaviour
         // 게임 오버 처리 로직
     }
 
-    public void OnEnemyDeath(EnemyData enemyData)
+    public void OnEnemyDeath(EnemyData enemyData, GameObject enemyObject)
     {
-        AddGold(enemyData.goldValue);
-        AddEXP(enemyData.expValue);
-        Debug.Log($"적 사망: {enemyData.name}. 보상 - 골드: {enemyData.goldValue}, 경험치: {enemyData.expValue}");
+        DropItem dropItem = enemyObject.GetComponent<DropItem>();
+        if (dropItem)
+        {
+            dropItem.Drop();
+        }
+        //AddGold(enemyData.goldValue);
+        //AddEXP(enemyData.expValue);
+        //Debug.Log($"적 사망: {enemyData.name}. 보상 - 골드: {enemyData.goldValue}, 경험치: {enemyData.expValue}");
     }
 
     private int CalculateExpForNextLevel(int level)

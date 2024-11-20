@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9201223832624964932}
   m_Layer: 0
   m_Name: Particle
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 8847352150509796207}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4936,7 +4936,7 @@ GameObject:
   - component: {fileID: 3430001681053959398}
   m_Layer: 0
   m_Name: Gold
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4987,8 +4987,8 @@ GameObject:
   - component: {fileID: 3837603091521558879}
   - component: {fileID: 2680274417390268119}
   m_Layer: 0
-  m_Name: coin
-  m_TagString: Untagged
+  m_Name: Gold
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5104,7 +5104,7 @@ GameObject:
   - component: {fileID: 5525890549167063458}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5136,8 +5136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7a5901c4b5cee4a97756409db641d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinMoidifier: 1
-  MaxMoidifier: 3
+  MinMoidifier: 3
+  MaxMoidifier: 7
   Loot: {fileID: 0}
   Target: {fileID: 0}
 --- !u!135 &5525890549167063458

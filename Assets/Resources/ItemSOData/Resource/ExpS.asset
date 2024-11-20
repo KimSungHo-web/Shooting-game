@@ -31,7 +31,7 @@ MonoBehaviour:
   consumables: []
   dropConsumeItemPrefab: {fileID: 0}
   resourceType: 0
-  resourceValue: 1
+  resourceValue: 10
   ResourcePrefab: {fileID: 6598565432378201081, guid: 3f53768cae715a64cb925835615bb954,
     type: 3}
   needResources: []

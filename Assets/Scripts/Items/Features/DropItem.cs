@@ -54,13 +54,12 @@ public class DropItem : MonoBehaviour
         switch (monsterType)
         {
             case MonsterType.Small:
-                goldAmount = 1;
-                expAmount = 1;
+                goldAmount = 3;
+                expAmount = Random.Range(1,2);
                 droppedExp = ItemManager.Instance.Instantiate("ExpS");
                 break;
             case MonsterType.Medium:
-                goldAmount = 3;
-                expAmount = 1;
+                goldAmount = 1;
                 droppedExp = ItemManager.Instance.Instantiate("ExpM");
                 break;
             case MonsterType.Large:
@@ -73,7 +72,7 @@ public class DropItem : MonoBehaviour
 
         if (droppedExp != null)
         {
-            dropPosition = transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+            dropPosition = transform.position + new Vector3(Random.Range(-1f, 1f), 1, Random.Range(-1f, 1f));
             droppedExp.transform.position = dropPosition;
         }
 
@@ -86,7 +85,7 @@ public class DropItem : MonoBehaviour
                 droppedGold.transform.position = dropPosition;
 
                 DropAnimation dropAnim = droppedGold.AddComponent<DropAnimation>();
-                dropAnim.StartDropAnimation(dropPosition,Rarity.Uncommon);
+                dropAnim.StartDropAnimation(dropPosition,Rarity.Resource);
             }
         }
 
