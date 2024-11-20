@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //ÇÃ·¹ÀÌ¾î¸¦ Ãß·ÂÇØ¾ßÇÑ´Ù -> ÇÃ·¹ÀÌ¾î À§Ä¡¿Í Ã¼·ÂÀ» ±â¹ÝÀ¸·Î ÃßÀû 
+    //ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ß·ï¿½ï¿½Ø¾ï¿½ï¿½Ñ´ï¿½ -> ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private ThridPersonMovement playerMovement;
+    [SerializeField] private ThirdPersonMovement playerMovement;
     [SerializeField] private PlayerHealthSystem healthSystem;
     [SerializeField] private EnemyHealth enemyHealth;
     UnityEngine.AI.NavMeshAgent agent;
@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerTransform = player.transform;
-        playerMovement = player.GetComponent<ThridPersonMovement>();
+        playerMovement = player.GetComponent<ThirdPersonMovement>();
         healthSystem = player.GetComponent<PlayerHealthSystem>();
         enemyHealth = GetComponent<EnemyHealth>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -26,13 +26,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemyHealth.currentHealth > 0 && healthSystem.health > 0) 
         {
-            //°æ·Î¸¦ »õ·Ó°Ô ¾´´Ù(ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡)
+            //ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡)
             Vector3 targetPosition = GameManager.Instance.playerMovement.CurrentPosition;
             agent.SetDestination(targetPosition);
         }
         else 
         {
-            //¾Æ´Ô ¸»±¸
+            //ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½
             agent.enabled = false;
         }
     }

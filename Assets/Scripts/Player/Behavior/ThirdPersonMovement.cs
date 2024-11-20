@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class ThridPersonMovement : MonoBehaviour
+public class ThirdPersonMovement : MonoBehaviour
 {
     [SerializeField]
     private float _speedChangeRate = 10f;
@@ -35,6 +35,7 @@ public class ThridPersonMovement : MonoBehaviour
     private float _colliderRadius;
     private Vector3 _localSpherePosition;
     private Vector3 _spherePosition;
+    private float _speed;
 
     // player
     private Vector2 _inputDirection;
@@ -42,6 +43,7 @@ public class ThridPersonMovement : MonoBehaviour
     private const float _terminalVelocity = 53f;
     private float _targetAngle;
 
+    public float currentSpeed => _speed;
     public Vector3 CurrentPosition => transform.position; // �÷��̾��� ���� ��ġ ��ȯ(KSH�߰�)
     
     private void Awake()
@@ -97,25 +99,24 @@ public class ThridPersonMovement : MonoBehaviour
         }
 
         float currentHorizontalSpeed = new Vector3 (_characterController.velocity.x, 0f, _characterController.velocity.z).magnitude;
-        float speed = 0f;
         const float speedOffset = 0.1f;
         
         if (currentHorizontalSpeed < targetSpeed - speedOffset
          || currentHorizontalSpeed > targetSpeed + speedOffset)
         {
-            speed = Mathf.Lerp (currentHorizontalSpeed, targetSpeed * _inputDirection.magnitude, _speedChangeRate * Time.deltaTime);
-            speed = Mathf.Round (speed * 1000f) / 1000f;
+            _speed = Mathf.Lerp (currentHorizontalSpeed, targetSpeed * _inputDirection.magnitude, _speedChangeRate * Time.deltaTime);
+            _speed = Mathf.Round (_speed * 1000f) / 1000f;
         }
         else
         {
-            speed = targetSpeed;
+            _speed = targetSpeed;
         }
         
         if (_inputDirection != Vector2.zero)
             _targetAngle = Mathf.Atan2 (_inputDirection.x, _inputDirection.y) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
         
         Vector3 targetDirectoin = Quaternion.Euler (0f, _targetAngle, 0f) * Vector3.forward;
-        _characterController.Move (speed * Time.deltaTime * targetDirectoin + new Vector3 (0f, _verticalVelocity * Time.deltaTime, 0f));
+        _characterController.Move (_speed * Time.deltaTime * targetDirectoin + new Vector3 (0f, _verticalVelocity * Time.deltaTime, 0f));
     }
 
     private void JumpAndGravity()

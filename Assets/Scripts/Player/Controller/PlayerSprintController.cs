@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSprintController : MonoBehaviour
 {
@@ -12,20 +13,23 @@ public class PlayerSprintController : MonoBehaviour
     
     private PlayerController _playerController;
     private PlayerStaminaSystem _staminaSystem;
+    private ThirdPersonMovement _movement;
     
-    private bool _isSprinting = false;
+    private bool _sprinting = false;
+    private bool _pressingSprintKey;
     private float _staminaDrainDelayCounter;
+    private bool _prevMoving;
     
     
-    public bool isSprinting => _isSprinting;
-    protected bool isPressingSprintKey => _playerController.isPressingSprintKey;
+    public bool isSprinting => _sprinting;
+    private bool _moving => _movement.currentSpeed >= 0.1f;
 
     
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
-        _playerController.SprintKeyPressed += PlayerController_SprintKeyPressed;
         _staminaSystem = GetComponent<PlayerStaminaSystem>();
+        _movement = GetComponent<ThirdPersonMovement>();
     }
 
     private void Update()
@@ -33,12 +37,13 @@ public class PlayerSprintController : MonoBehaviour
         if (_staminaDrainDelayCounter < staminaDrainDealy)
             _staminaDrainDelayCounter += Time.deltaTime;
         
+        UpdateState();
         DrainStamina();
     }
 
     private void DrainStamina()
     {
-        if (!_isSprinting)
+        if (!_sprinting)
             return;
         if (_staminaDrainDelayCounter < staminaDrainDealy)
             return;
@@ -47,29 +52,75 @@ public class PlayerSprintController : MonoBehaviour
         
         bool used = _staminaSystem.Use (staminaUsage);
         if (!used)
-        {
-            _isSprinting = false;
-            _staminaSystem.SetUsingState (false);
-        }
+            ChangeState (false);
     }
-    
-    private void PlayerController_SprintKeyPressed (bool pressed)
+
+    private void OnSprint (InputValue value)
     {
-        if (pressed)
+        _pressingSprintKey = value.isPressed;
+    }
+
+    private void UpdateState()
+    {
+        if (_pressingSprintKey)
         {
-            if (_staminaSystem.CanUse())
+            if (_moving)
             {
-                _isSprinting = true;
-                _staminaSystem.SetUsingState (true);
+                if (!_sprinting)
+                {
+                    if (_staminaSystem.CanUse())
+                        ChangeState (true);    
+                }
+                
+            }
+            else
+                ChangeState (false);
+            
+        }
+        else
+            ChangeState (false);
+        
+        /*
+        // Is the sprint key being pressed?
+        if (_pressingSprintKey)
+        {
+            // Has movement newly started?
+            if (_prevMoving != _moving)
+            {
+                _prevMoving = _moving;
+                if (_moving)
+                {
+                    if (_staminaSystem.CanUse())
+                        ChangeState (true);
+                }
+                else
+                    ChangeState (false);
+            }
+            // Is currently moving?
+            else
+            {
+                if (_moving && !_sprinting)
+                {
+                    if (_staminaSystem.CanUse())
+                        ChangeState (true);
+                }
             }
         }
         else
         {
-            if (_isSprinting)
-            {
-                _isSprinting = false;
-                _staminaSystem.SetUsingState (false);
-            }
+            ChangeState (false);
+            _prevMoving = false;
         }
+        */
     }
+
+    private void ChangeState (bool sprintState)
+    {
+        if (_sprinting == sprintState)
+            return;
+
+        _sprinting = sprintState;
+        _staminaSystem.SetUsingState (sprintState);
+    }
+    
 }

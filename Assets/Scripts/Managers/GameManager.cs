@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Management")]
     public PlayerHealthSystem playerHealth;
-    public ThridPersonMovement playerMovement;
+    public ThirdPersonMovement playerMovement;
 
     [Header("Game Stats")]
     public int currentGold;
@@ -29,62 +29,62 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // ÃÊ±â UI ¾÷µ¥ÀÌÆ®
+        // ï¿½Ê±ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         UpdateAllUI();
     }
 
     public void AddGold(int amount)
     {
         currentGold += amount;
-        playerUI.UpdateGold(currentGold); // °ñµå UI ¾÷µ¥ÀÌÆ®
-        Debug.Log($"°ñµå Ãß°¡: {amount}. ÇöÀç °ñµå: {currentGold}");
+        playerUI.UpdateGold(currentGold); // ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        Debug.Log($"ï¿½ï¿½ï¿½ ï¿½ß°ï¿½: {amount}. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½: {currentGold}");
     }
 
     public void AddEXP(int amount)
     {
         currentEXP += amount;
 
-        // ÇöÀç ·¹º§¿¡¼­ ÇÊ¿äÇÑ °æÇèÄ¡ °è»ê
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
         int expToNextLevel = CalculateExpForNextLevel(currentLevel);
 
-        // °æÇèÄ¡°¡ ´ÙÀ½ ·¹º§¿¡ µµ´ÞÇÏ¸é ·¹º§ ¾÷
+        // ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         while (currentEXP >= expToNextLevel)
         {
-            currentEXP -= expToNextLevel; // ³²Àº °æÇèÄ¡¿¡¼­ ÇöÀç ·¹º§¿¡ ÇÊ¿äÇÑ °æÇèÄ¡¸¦ »­
-            LevelUp(); // ·¹º§ ¾÷
-            expToNextLevel = CalculateExpForNextLevel(currentLevel); // »õ·Î¿î ·¹º§ÀÇ ÇÊ¿ä °æÇèÄ¡ °è»ê
+            currentEXP -= expToNextLevel; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½
+            LevelUp(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+            expToNextLevel = CalculateExpForNextLevel(currentLevel); // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½
         }
 
-        // °æÇèÄ¡ UI ¾÷µ¥ÀÌÆ®
+        // ï¿½ï¿½ï¿½ï¿½Ä¡ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         float expPercentage = (float)currentEXP / expToNextLevel;
         playerUI.UpdateExperience(expPercentage);
 
-        Debug.Log($"°æÇèÄ¡ Ãß°¡: {amount}. ÇöÀç °æÇèÄ¡: {currentEXP}/{expToNextLevel}");
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ß°ï¿½: {amount}. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡: {currentEXP}/{expToNextLevel}");
     }
 
     private void LevelUp()
     {
         currentLevel++;
-        playerUI.UpdateLevel(currentLevel); // ·¹º§ UI ¾÷µ¥ÀÌÆ®
-        Debug.Log($"·¹º§ ¾÷! ÇöÀç ·¹º§: {currentLevel}");
+        playerUI.UpdateLevel(currentLevel); // ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½! ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: {currentLevel}");
     }
 
     public void OnPlayerDeath()
     {
-        Debug.Log("ÇÃ·¹ÀÌ¾î°¡ »ç¸ÁÇß½À´Ï´Ù. °ÔÀÓ ¿À¹ö!");
-        // °ÔÀÓ ¿À¹ö Ã³¸® ·ÎÁ÷
+        Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     public void OnEnemyDeath(EnemyData enemyData)
     {
         AddGold(enemyData.goldValue);
         AddEXP(enemyData.expValue);
-        Debug.Log($"Àû »ç¸Á: {enemyData.name}. º¸»ó - °ñµå: {enemyData.goldValue}, °æÇèÄ¡: {enemyData.expValue}");
+        Debug.Log($"ï¿½ï¿½ ï¿½ï¿½ï¿½: {enemyData.name}. ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½: {enemyData.goldValue}, ï¿½ï¿½ï¿½ï¿½Ä¡: {enemyData.expValue}");
     }
 
     private int CalculateExpForNextLevel(int level)
     {
-        // ·¹º§¿¡ µû¶ó ÇÊ¿äÇÑ °æÇèÄ¡¸¦ °è»ê (ÀÓÀÇ ·ÎÁ÷)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         return 100 + (level * 50);
     }
 
@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour
     {
         playerUI.UpdateGold(currentGold);
         playerUI.UpdateHealth(playerHealth.health, playerHealth.maxHealth);
-        playerUI.UpdateStamina(1, 1); // ÃÊ±â ½ºÅÂ¹Ì³ª (ÀÓÀÇ °ª)
-        playerUI.UpdateExperience(0); // ÃÊ±â °æÇèÄ¡ (0%)
+        playerUI.UpdateStamina(1, 1); // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½Â¹Ì³ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
+        playerUI.UpdateExperience(0); // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ (0%)
         playerUI.UpdateLevel(currentLevel);
     }
 }

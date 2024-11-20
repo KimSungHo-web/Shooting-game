@@ -737,20 +737,10 @@ PrefabInstance:
       propertyPath: _hitBloodParticles
       value: 
       objectReference: {fileID: 5112252677797486390}
-    - target: {fileID: 2742339942030219712, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
-        type: 3}
-      propertyPath: _useThresholdRate
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3968928291614023984, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
         type: 3}
       propertyPath: m_Name
       value: Shooter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7089861382429405295, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
-        type: 3}
-      propertyPath: _playerStats.maxStamina
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
