@@ -3,44 +3,25 @@ using UnityEngine;
 
 public class CubeInventory : MonoBehaviour
 {
-    public List<Item> itemsInCube;
-    public GameObject inventoryUI;
-    public Transform itemSlotParent;
+    public List<Item> items; // 아이템 리스트
 
-    private void Start()
+    // 아이템 추가
+    public void AddItem(Item newItem)
     {
-        inventoryUI.SetActive(false);
+        items.Add(newItem);
     }
 
-    public void ToggleInventoryUI()
+    // 아이템 제거
+    public void RemoveItem(Item item)
     {
-        inventoryUI.SetActive(!inventoryUI.activeSelf);
-
-        if (inventoryUI.activeSelf)
-        {
-            ShowInventory();
-        }
+        items.Remove(item);
     }
 
-    private void ShowInventory()
+    // 아이템 초기화 (테스트용)
+    public void InitializeItems()
     {
-        foreach (Transform child in itemSlotParent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach (var item in itemsInCube)
-        {
-            GameObject itemSlot = new GameObject(item.itemName);
-            itemSlot.transform.SetParent(itemSlotParent);
-            itemSlot.AddComponent<UnityEngine.UI.Image>().sprite = item.itemIcon; 
-            itemSlot.AddComponent<UnityEngine.UI.Button>();
-
-            // 클릭 시 아이템 설명을 출력하는 로직을 추가할 수 있습니다.
-            itemSlot.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
-            {
-                Debug.Log($"아이템 {item.itemName}:");
-            });
-        }
+        AddItem(new Item("아이템 1", null, 1, 1));  // 가로 1, 세로 1인 아이템
+        AddItem(new Item("아이템 2", null, 2, 2));  // 가로 2, 세로 2인 아이템
+        AddItem(new Item("아이템 3", null, 1, 2));  // 가로 1, 세로 2인 아이템
     }
 }
