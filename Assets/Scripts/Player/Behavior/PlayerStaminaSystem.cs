@@ -21,6 +21,7 @@ public class PlayerStaminaSystem : MonoBehaviour
     
     public int stamina => _stamina;
     public int maxStamina => _playerStats.maxStamina;
+    public float useThresholdRate => _useThresholdRate;
     
     
     private PlayerController _playerController;
