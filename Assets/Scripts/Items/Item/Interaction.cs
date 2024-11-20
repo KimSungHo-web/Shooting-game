@@ -48,7 +48,7 @@ public class Interaction : MonoBehaviour
                 }
             }
         }
-    }
+    } 
 
     // 해당 게임 오브젝트의 텍스트를 활성화/비활성화하는 함수
     private void SetPromptText(Transform targetTransform)
