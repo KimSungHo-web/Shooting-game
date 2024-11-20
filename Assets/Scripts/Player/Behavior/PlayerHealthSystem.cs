@@ -54,8 +54,4 @@ public class PlayerHealthSystem : MonoBehaviour
 
         return false;
     }
-    public void UpdateStamina(int currentStamina, int maxStamina)
-    {
-        GameManager.Instance.playerUI.UpdateStamina(currentStamina, maxStamina);
-    }
 }
