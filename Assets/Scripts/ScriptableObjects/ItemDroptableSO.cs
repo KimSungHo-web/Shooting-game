@@ -19,6 +19,7 @@ public class ItemDroptableSO : ScriptableObject
     public List<DropItem> rareItems;
     public List<DropItem> epicItems;
     public List<DropItem> legendaryItems;
+    public List<DropItem> consumableItems;
 
     public List<DropItem> GetItemsByRarity(Rarity rarity)
     {

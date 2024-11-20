@@ -1,5 +1,4 @@
 using Defines;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -53,15 +52,65 @@ public class ItemManager : Singleton<ItemManager>
         GameObject prefab = Load<GameObject>($"Prefabs/{path}");
         if (prefab == null)
         {
-            Debug.Log($"Failed to load prefab : {path}");
+            Debug.Log($"프리팹 로드 실패 : {path}");
             return null;
         }
 
         return Instantiate(prefab, parent);
     }
-    public ItemSO GetItemSO(string itemName)
+    //코드 통합필요
+    public ItemSO GetResourceItemSO(string itemName)
     {
         return Load<ItemSO>($"ItemSOData/Resource/{itemName}");
     }
+    public ItemSO GetConsumeItemSO(string itemName)
+    {
+        return Load<ItemSO>($"ItemSOData/Consume/{itemName}");
+    }
+    //
+    //
 
+    public ItemSO GetItemSO(ItemType itemType,Rarity rarity, string itemName)
+    {
+        string folderPath = GetFolderPathItemType(itemType,rarity);
+        return Load<ItemSO>($"{folderPath}/{itemName}");
+    }
+
+    // 소비아이템 ItemSO HealthPotion = ItemManager.Instance.GetItemSO(ItemType.Consumable, null, "ItemName");
+    // 장비아이템 ItemSO EpicWeapon = ItemManager.Instance.GetItemSO(ItemType.Equipable, Rarity.Epic, "ItemName");
+    private string GetFolderPathItemType(ItemType itemType, Rarity? rarity)
+    {
+        switch (itemType)
+        {
+            case ItemType.Consumable:
+                return "ItemSOData/Consume";
+            case ItemType.Equipable:
+                return $"ItemSOData/Weapon/{GetRarityFolder(rarity.Value)}";
+            case ItemType.Passive:
+                return "ItemSOData/Passive";
+            default:
+                Debug.LogWarning($"설정되지 않은 아이템 타입: {itemType}");
+                return "ItemSOData";
+        }
+
+    }
+    private string GetRarityFolder(Rarity rarity)
+    {
+        switch (rarity)
+        {
+            case Rarity.Common:
+                return "Common";
+            case Rarity.Uncommon:
+                return "Uncommon";
+            case Rarity.Rare:
+                return "Rare";
+            case Rarity.Epic:
+                return "Epic";
+            case Rarity.Legendary:
+                return "Legendery";
+            default:
+                Debug.LogWarning($"설정되지 않은 Defines.Rarity: {rarity}");
+                return "Common"; 
+        }
+    }
 }

@@ -27,6 +27,7 @@ public class DropItem : MonoBehaviour
         dropItems.AddRange(dropTable.rareItems);
         dropItems.AddRange(dropTable.epicItems);
         dropItems.AddRange(dropTable.legendaryItems);
+        dropItems.AddRange(dropTable.consumableItems);
 
         foreach (var dropItem in dropItems)
         {
