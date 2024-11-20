@@ -19,7 +19,7 @@ public class ConsumeItem : InteractableItem, IInteractable, IConsumable
         throw new System.NotImplementedException();
     }
 
-    public void OnInteract()
+    public void OnInteract(Transform target)
     {
         throw new System.NotImplementedException();
     }

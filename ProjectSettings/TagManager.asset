@@ -8,7 +8,6 @@ TagManager:
   - Gold
   - Exp
   - Item
-
   layers:
   - Default
   - TransparentFX
@@ -23,7 +22,7 @@ TagManager:
   - LightMask
   - Invisible
   - PostProcessing
-  - Interactable
+  - 
   - 
   - 
   - 
