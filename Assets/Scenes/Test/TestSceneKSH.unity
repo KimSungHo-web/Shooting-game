@@ -1617,6 +1617,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1448934792652525867}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132148144493396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7828427346829875007, guid: 765accb7426da7a4189851a7a6495cee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1448934792652525867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &919132148144493397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148144493396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da20a2ee6006e1a46b48bee4e018e43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: GameScene
 --- !u!1001 &1107834628512532657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1797,10 +1816,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: portal
       objectReference: {fileID: 0}
+    - target: {fileID: 7965643803845324167, guid: 765accb7426da7a4189851a7a6495cee,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7828427346829875007, guid: 765accb7426da7a4189851a7a6495cee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919132148144493397}
   m_SourcePrefab: {fileID: 100100000, guid: 765accb7426da7a4189851a7a6495cee, type: 3}
 --- !u!1001 &5736509986802637585
 PrefabInstance:
@@ -2166,6 +2194,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 703737422971111177, guid: 203127671cfb66849a3a42d8e76011cd,
+        type: 3}
+      propertyPath: Potal
+      value: 
+      objectReference: {fileID: 919132148144493396}
     - target: {fileID: 703737422971111177, guid: 203127671cfb66849a3a42d8e76011cd,
         type: 3}
       propertyPath: bossUI

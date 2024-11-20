@@ -23,7 +23,8 @@ public class BossManager : MonoBehaviour
     public PlayerUI playerUI; // 플레이어 UI 연결
 
     [Header("Environment Settings")]
-    public GameObject[] otherObjects; // 보스와 플레이어 제외 비활성화할 오브젝트들
+    public GameObject[] otherObjects; // 포탈
+    public GameObject Potal; // 포탈
 
     [Header("UI Settings")]
     public BossUI bossUI; // 보스 UI 관리
@@ -37,6 +38,7 @@ public class BossManager : MonoBehaviour
     {
         timer = spawnTime; // 초기 타이머 설정
         bossUI.gameObject.SetActive(false);
+        Potal.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -145,6 +147,7 @@ public class BossManager : MonoBehaviour
             if (playerUI != null)
             {
                 playerUI.UpdateMessage("Go Next Level");
+                Potal.gameObject.SetActive(true);
             }
 
             // 적 스폰 중지
