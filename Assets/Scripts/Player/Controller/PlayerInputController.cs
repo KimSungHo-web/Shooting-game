@@ -25,6 +25,12 @@ public class PlayerInputController : PlayerController
         isAttacking = value.isPressed;
     }
 
+    public void OnSprint (InputValue value)
+    {
+        isPressingSprintKey = value.isPressed;
+        CallSprintKeyPressed (isPressingSprintKey);
+    }
+
     public void OnInventory()
     {
         inventory?.Invoke();

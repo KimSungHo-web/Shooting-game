@@ -131,7 +131,9 @@ GameObject:
   - component: {fileID: 4421223640611845282}
   - component: {fileID: 7089861382429405295}
   - component: {fileID: 8210498933253109951}
+  - component: {fileID: 2742339942030219712}
   - component: {fileID: 1881161166580831417}
+  - component: {fileID: 2517550865025057295}
   - component: {fileID: 5055709644580742872}
   - component: {fileID: 8018776301880148291}
   - component: {fileID: 2571196742644526555}
@@ -353,8 +355,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStats:
     maxHealth: 100
+    maxStamina: 100
     moveSpeed: 5
     attackDelay: 0.3
+    attackDamage: 10
 --- !u!114 &8210498933253109951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +373,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _healthChangeDelay: 0.5
+--- !u!114 &2742339942030219712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968928291614023984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41798878afbdcbc41bf8c0daf3ca2856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stamina: 0
+  _recoveryDelay: 0.2
+  _recoveryRate: 1
+  _useThresholdRate: 0.2
 --- !u!114 &1881161166580831417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,6 +402,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canLook: 1
+--- !u!114 &2517550865025057295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968928291614023984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d50122c7d791347860a0f26481e34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaUsage: 3
+  staminaDrainDealy: 0.2
 --- !u!114 &5055709644580742872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +448,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b301c52a682ec54ab43eda445de3ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speedChangeRate: 10
+  _gravity: -9.81
+  _grounded: 1
+  _groundedOffset: -0.14
+  _groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &2571196742644526555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,11 +483,12 @@ MonoBehaviour:
   _gunBarrelEnd: {fileID: 4333184440728637799}
   _faceLight: {fileID: 8103503303468888091}
   _hitParticles: {fileID: 0}
+  _hitBloodParticles: {fileID: 0}
   _effectsDisplayTime: 0.05
   _fireRange: 100
   _shootableMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _defaultSpreadRange: 5
 --- !u!114 &4624719221031762251
 MonoBehaviour:
