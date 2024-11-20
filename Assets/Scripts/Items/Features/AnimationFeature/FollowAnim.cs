@@ -4,8 +4,8 @@ using UnityEngine;
 public class FollowAnim : MonoBehaviour
 {
     
-    public float MinMoidifier = 7f;
-    public float MaxMoidifier = 11f;
+    public float MinMoidifier = -3f;
+    public float MaxMoidifier = -1f;
 
     public Transform Loot;
     public Transform Target;
@@ -18,7 +18,6 @@ public class FollowAnim : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Target = player.transform;
 
-        _isFollowing = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,7 +38,7 @@ public class FollowAnim : MonoBehaviour
         if(_isFollowing)
         {
          Loot.position = Vector3.SmoothDamp
-         (Loot.position, Target.position, ref _velocity,Time.deltaTime*Random.Range(MinMoidifier,MaxMoidifier));
+         (Loot.position, Target.position, ref _velocity,Time.deltaTime * Random.Range(MinMoidifier,MaxMoidifier));
         }
         
     }

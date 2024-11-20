@@ -10,28 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7acc89e3e113f40a8d3f5b14acfff1, type: 3}
-  m_Name: ExpS
+  m_Name: S0_M249
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
+  displayName: M249
+  description: "\uAE30\uBCF8 \uAE30\uAD00\uCD1D\uC785\uB2C8\uB2E4."
   itemIcon: {fileID: 0}
-  itemType: 4
+  itemType: 1
   isStackable: 0
   stackSize: 0
   SlotSize: 0
-  equipType: 0
-  equipPrefab: {fileID: 0}
-  dropItemPrefab: {fileID: 0}
-  rarity: 0
+  equipType: 1
+  equipPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
+    type: 3}
+  dropItemPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
+    type: 3}
+  rarity: 1
   LeftHand: 0
-  childPath: ExpS
-  projectileDamage: 0
-  projectileSpeed: 0
-  projectileScale: 0
+  childPath: M249
+  projectileDamage: 10
+  projectileSpeed: 1
+  projectileScale: 1
   consumables: []
   dropConsumeItemPrefab: {fileID: 0}
-  resourceType: 0
-  resourceValue: 10
-  ResourcePrefab: {fileID: 6598565432378201081, guid: 3f53768cae715a64cb925835615bb954,
-    type: 3}
+  resourceType: 1
+  resourceValue: 0
+  ResourcePrefab: {fileID: 0}
   needResources: []

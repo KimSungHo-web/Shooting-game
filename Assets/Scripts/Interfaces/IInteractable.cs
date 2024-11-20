@@ -2,10 +2,10 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    // »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ® Á¤º¸ ÅØ½ºÆ®
+    // ìƒí˜¸ì‘ìš© ê°€ëŠ¥í•œ ì˜¤ë¸Œì íŠ¸ ì •ë³´ í…ìŠ¤íŠ¸
     public string GetInteractPrompt();
-    // »óÈ£ÀÛ¿ë °¡´ÉÇÑ ¿ÀºêÁ§Æ®¸¦ Å¬¸¯ÇßÀ»¶§ ½ÇÇàµÇ´Â ÇÔ¼ö
+
     public void OnInteract();
-    // »óÈ£ÀÛ¿ë °¡´ÉÇÑ °æ¿ì ±ô¹ÚÀÌ°Ô ÇÏ±âÀ§ÇÑ ÇÔ¼ö
+
     public void Flash();
 }

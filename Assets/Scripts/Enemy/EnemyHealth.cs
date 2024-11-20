@@ -77,14 +77,13 @@ public class EnemyHealth : MonoBehaviour
     }
     public void StartSinking() //Dead 애니메이션 이벤트가 저거로 설정되어잇는데 FBX파일 자체에 저장되어잇는거라 제거를 못함
     {
-        dropitem.Drop();
+        GameManager.Instance.OnEnemyDeath(enemyData, gameObject);
 
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
 
         isDisappearing = true;
 
-        GameManager.Instance.OnEnemyDeath(enemyData);
         Destroy(gameObject, 2f);
     }
 }
