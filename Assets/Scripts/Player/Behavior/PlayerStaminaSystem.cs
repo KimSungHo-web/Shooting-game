@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class PlayerStaminaSystem : MonoBehaviour
 {
-    // (current, max)
-    public Action<int, int> StaminaChanged = (_, _) => { };
+    public Action<int, int> StaminaChanged = (current, max) => { };
     
     
     [SerializeField]
     private int _stamina;
 
     [SerializeField]
-    private float _recoveryDelay = 0.5f;
+    private float _recoveryDelay = 0.2f;
 
     [SerializeField]
     private int _recoveryRate = 1;
@@ -26,6 +25,7 @@ public class PlayerStaminaSystem : MonoBehaviour
     
     private PlayerController _playerController;
     private PlayerStats _playerStats;
+    private PlayerUI _playerUI;
     
     private float _recoveryDelayCounter;
     private int _using;
@@ -37,6 +37,11 @@ public class PlayerStaminaSystem : MonoBehaviour
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
 
         _stamina = maxStamina;
+    }
+
+    private void Start()
+    {
+        _playerUI = GameManager.Instance.playerUI;
     }
 
     private void Update()
@@ -60,11 +65,12 @@ public class PlayerStaminaSystem : MonoBehaviour
 
         _stamina = Mathf.Clamp (_stamina + _recoveryRate, 0, maxStamina);
         StaminaChanged.Invoke (_stamina, maxStamina);
+        _playerUI.UpdateStamina (_stamina, maxStamina);
     }
 
-    public void SetUsingState (bool @using)
+    public void SetUsingState (bool bUsing)
     {
-        _using += @using ? 1 : -1;
+        _using += bUsing ? 1 : -1;
     }
 
     public bool Use (int amount)
@@ -73,6 +79,7 @@ public class PlayerStaminaSystem : MonoBehaviour
             return false;
         _stamina -= amount;
         StaminaChanged.Invoke (_stamina, maxStamina);
+        _playerUI.UpdateStamina (_stamina, maxStamina);
         return true;
     }
 

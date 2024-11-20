@@ -27,6 +27,7 @@ public class ThridPersonMovement : MonoBehaviour
     
     private PlayerController _playerController;
     private CharacterController _characterController;
+    private PlayerSprintController _sprintController;
     
     private GameObject _mainCamera;
     private PlayerStats _playerStats;
@@ -47,6 +48,7 @@ public class ThridPersonMovement : MonoBehaviour
     {
         _playerController = GetComponent<PlayerController>();
         _characterController = GetComponent<CharacterController>();
+        _sprintController = GetComponent<PlayerSprintController>();
 
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
@@ -90,7 +92,7 @@ public class ThridPersonMovement : MonoBehaviour
         if (_inputDirection != Vector2.zero)
         {
             targetSpeed = _playerStats.moveSpeed;
-            targetSpeed *= _playerController.isPressingSprintKey ? 1.5f : 1f;
+            targetSpeed *= _sprintController.isSprinting ? 1.5f : 1f;
             targetSpeed *= _playerController.isAttacking ? 0.5f : 1f;
         }
 
