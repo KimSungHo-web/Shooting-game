@@ -24,7 +24,7 @@ public class PlayerUI : MonoBehaviour
         UpdateStamina(1, 1); // 초기 스태미나: 1/1
         UpdateExperience(0); // 초기 경험치: 0%
         UpdateLevel(0);      // 초기 레벨: 0
-        UpdateMessage("Survive");
+        UpdateMessage("Kill BossMonster and Survive");
         elapsedTime = 0f;    // 게임 시작 시간 초기화
     }
 
@@ -37,7 +37,7 @@ public class PlayerUI : MonoBehaviour
         UpdateTimer(elapsedTime);
     }
 
-    private void UpdateMessage(string message)
+    public void UpdateMessage(string message)
     {
         if (messageText != null)
         {

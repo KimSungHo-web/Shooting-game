@@ -14,10 +14,11 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Mini Boss Settings")]
     [Range(0f, 1f)] public float minibossSpawnChance = 0.5f; // 미니보스 생성 확률 (50%)
-    public Vector3 minibossScaleMultiplier = new Vector3(2f, 2f, 2f); // 미니보스 크기 배율
+    public Vector3 minibossScaleMultiplier = new Vector3(1f, 1f, 1f); // 미니보스 크기 배율
     public float minibossStatMultiplier = 2f; // 미니보스 능력치 배율
 
     private List<GameObject> spawnedEnemies = new List<GameObject>(); // 생성된 적 리스트
+    private bool isBossIntroPlaying = false; // 보스 연출 여부
 
     private void Start()
     {
@@ -28,7 +29,8 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            if (spawnedEnemies.Count < maxEnemies)
+            // 보스 연출 중에는 적 생성 중단
+            if (!isBossIntroPlaying && spawnedEnemies.Count < maxEnemies)
             {
                 Vector3 spawnPosition = GetRandomNavMeshPosition();
                 if (spawnPosition != Vector3.zero)
@@ -71,14 +73,28 @@ public class EnemySpawner : MonoBehaviour
             // 보스 크기 설정
             newEnemy.transform.localScale = Vector3.Scale(newEnemy.transform.localScale, minibossScaleMultiplier);
         }
+
         // 생성된 적 리스트에 추가
         spawnedEnemies.Add(newEnemy);
     }
+
     public void RemoveEnemy(GameObject enemy)
     {
         if (spawnedEnemies.Contains(enemy))
         {
             spawnedEnemies.Remove(enemy);
         }
+    }
+
+    // 보스 연출 시작
+    public void StartBossIntro()
+    {
+        isBossIntroPlaying = true;
+    }
+
+    // 보스 연출 종료
+    public void EndBossIntro()
+    {
+        isBossIntroPlaying = false;
     }
 }

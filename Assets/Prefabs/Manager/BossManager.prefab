@@ -49,5 +49,12 @@ MonoBehaviour:
   - {fileID: 7308197035719175604, guid: 80b7f465d912e704caaa761bc996d3ef, type: 3}
   - {fileID: 5073312039829058024, guid: 6b25ac43c1d469e4185bb29e34a7f648, type: 3}
   spawnPoint: {fileID: 0}
-  spawnTime: 10
+  spawnTime: 5
   isBossSpawned: 0
+  playerCamera: {fileID: 0}
+  bossCamera: {fileID: 0}
+  playerTransform: {fileID: 0}
+  playerUI: {fileID: 0}
+  otherObjects: []
+  bossUI: {fileID: 0}
+  bossIntroDuration: 3

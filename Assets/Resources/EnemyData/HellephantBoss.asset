@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80d6e6905b2009642b2bd24220410073, type: 3}
-  m_Name: Hellephant
+  m_Name: HellephantBoss
   m_EditorClassIdentifier: 
-  startHealth: 50
+  startHealth: 500
   attackDamage: 50
   goldValue: 50
   expValue: 50
   disappearSpeed: 0.4
-  enemyName: Hellephant
+  enemyName: HellephantBoss
   ExpPath: ExpL

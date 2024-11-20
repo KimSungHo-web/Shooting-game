@@ -24,16 +24,19 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (enemyHealth.currentHealth > 0 && healthSystem.health > 0) 
+        if (agent != null && agent.enabled && enemyHealth?.currentHealth > 0 && healthSystem?.health > 0)
         {
-            //경로를 새롭게 쓴다(플레이어의 위치)
-            Vector3 targetPosition = GameManager.Instance.playerMovement.CurrentPosition;
+            // 경로를 새롭게 설정 (플레이어의 위치)
+            Vector3 targetPosition = GameManager.Instance?.playerMovement?.CurrentPosition ?? Vector3.zero;
             agent.SetDestination(targetPosition);
         }
-        else 
+        else
         {
-            //아님 말구
-            agent.enabled = false;
+            // NavMeshAgent 비활성화
+            if (agent != null && agent.enabled)
+            {
+                agent.enabled = false;
+            }
         }
     }
 }

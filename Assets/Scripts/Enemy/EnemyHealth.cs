@@ -1,69 +1,73 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private EnemyData enemyData;
-    private EnemySpawner spawner;
-    public int currentHealth;
-    bool isDead;
-    bool isDisappearing;
-    Animator animator;
-    AudioSource enemyAudio;
+    [Header("Dependencies")]
+    public EnemyData enemyData; // 적 데이터
+    [SerializeField] private EnemySpawner spawner; // 적 스포너
 
-    ParticleSystem hitParticles; // 히트 파티클
-    CapsuleCollider capsuleCollider;
-    DropItem dropitem;
+    [Header("Health Settings")]
+    public int currentHealth; // 현재 체력
+    private bool isDead;
+    private bool isDisappearing;
 
-    
+    [Header("Boss Settings")]
+    public bool isBoss = false; // 보스 여부
 
-    void Awake()
+    [Header("Components")]
+    private Animator animator;
+    private AudioSource enemyAudio;
+    private ParticleSystem hitParticles;
+    private CapsuleCollider capsuleCollider;
+    private DropItem dropitem;
+
+    // 이벤트
+    public delegate void HealthChanged(int currentHealth, int maxHealth); // 체력 변경 이벤트
+    public event HealthChanged OnHealthChanged;
+
+    public delegate void BossDeath(); // 보스 사망 이벤트
+    public event BossDeath OnBossDeath;
+
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         enemyAudio = GetComponent<AudioSource>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         spawner = FindObjectOfType<EnemySpawner>();
-        EnemyDataManager enemydatamanager = GetComponent<EnemyDataManager>();
-        enemyData = enemydatamanager.enemyData;
+
+        // 데이터 초기화
+        EnemyDataManager enemyDataManager = GetComponent<EnemyDataManager>();
+        enemyData = enemyDataManager.enemyData;
 
         currentHealth = enemyData.startHealth;
-
         dropitem = GetComponent<DropItem>();
-        
     }
 
-    void Update()
+    private void Update()
     {
-
-        //테스트를 위해 추가한 코드입니다
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(20, transform.position); // T 키를 누르면 20 데미지
-        }
-        //테스트를 위해 추가한 코드입니다
-
         if (isDisappearing)
         {
-            transform.Translate(-Vector3.up *enemyData.disappearSpeed * Time.deltaTime);
+            transform.Translate(-Vector3.up * enemyData.disappearSpeed * Time.deltaTime);
         }
-
     }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
-        if (isDead) 
-        {
+        if (isDead)
             return;
-        }
 
         enemyAudio.Play();
-
         currentHealth -= amount;
 
-        hitParticles.transform.position = hitPoint;
+        // 보스 UI 업데이트
+        if (isBoss)
+        {
+            OnHealthChanged?.Invoke(currentHealth, enemyData.startHealth);
+        }
 
+        hitParticles.transform.position = hitPoint;
         hitParticles.Play();
 
         if (currentHealth <= 0)
@@ -71,12 +75,19 @@ public class EnemyHealth : MonoBehaviour
             Death();
         }
     }
-    void Death()
+
+    private void Death()
     {
         isDead = true;
         animator.SetTrigger("Dead");
+
+        if (isBoss)
+        {
+            OnBossDeath?.Invoke(); // 보스 사망 이벤트
+        }
     }
-    public void StartSinking() //Dead 애니메이션 이벤트가 저거로 설정되어잇는데 FBX파일 자체에 저장되어잇는거라 제거를 못함
+
+    public void StartSinking()
     {
         dropitem.Drop();
 

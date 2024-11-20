@@ -9894,7 +9894,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7542995994346384434}
@@ -10125,7 +10125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca26dbcca976784da566acadd8732dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 5ce8282a15c59f8489bc620a02926fdf, type: 2}
+  enemyData: {fileID: 11400000, guid: ea0dea53f43700742a4824ebdf8ced83, type: 2}
 --- !u!114 &939492474139361797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10138,7 +10138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2585e80e6e3c145af4e3056d4bb473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyData: {fileID: 0}
+  spawner: {fileID: 0}
   currentHealth: 0
+  isBoss: 0
 --- !u!114 &6086518383996396121
 MonoBehaviour:
   m_ObjectHideFlags: 0

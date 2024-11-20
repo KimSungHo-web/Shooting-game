@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80d6e6905b2009642b2bd24220410073, type: 3}
-  m_Name: Hellephant
+  m_Name: ZombunnyBoss
   m_EditorClassIdentifier: 
-  startHealth: 50
-  attackDamage: 50
-  goldValue: 50
-  expValue: 50
+  startHealth: 300
+  attackDamage: 30
+  goldValue: 30
+  expValue: 30
   disappearSpeed: 0.4
-  enemyName: Hellephant
-  ExpPath: ExpL
+  enemyName: ZombunnyBoss
+  ExpPath: ExpS

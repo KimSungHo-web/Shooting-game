@@ -8,6 +8,6 @@ public class EnemyData : ScriptableObject
     public int goldValue;
     public int expValue;
     public float disappearSpeed;
-
+    public string enemyName;
     public string ExpPath;
 }
