@@ -78,6 +78,7 @@ public class ItemSOEditor : Editor
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("소비타입", EditorStyles.boldLabel);
 
+        itemSO.dropItemPrefab = (GameObject)EditorGUILayout.ObjectField("Drop Item Prefab", itemSO.dropItemPrefab, typeof(GameObject), false);
         itemSO.SlotSize = EditorGUILayout.IntField("Slot Size", itemSO.SlotSize);
         EditorGUILayout.Space();
         itemSO.isStackable = EditorGUILayout.Toggle("Is Stackable", itemSO.isStackable);

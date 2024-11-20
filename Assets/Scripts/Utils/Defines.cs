@@ -35,7 +35,8 @@ namespace Defines
         Uncommon,
         Rare,
         Epic,
-        Legendary
+        Legendary,
+        Resource
     }
 
     public enum ResourceType

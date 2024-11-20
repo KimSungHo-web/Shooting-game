@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 5051525729211808748}
   - component: {fileID: 211021111123139107}
   m_Layer: 0
-  m_Name: Exp(midium)
-  m_TagString: Untagged
+  m_Name: ExpM
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7a5901c4b5cee4a97756409db641d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinMoidifier: 7
-  MaxMoidifier: 11
+  MinMoidifier: 10
+  MaxMoidifier: 20
   Loot: {fileID: 0}
   Target: {fileID: 0}
 --- !u!114 &211021111123139107
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 7261395898001448339}
   m_Layer: 0
   m_Name: ExpM
-  m_TagString: Untagged
+  m_TagString: Exp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

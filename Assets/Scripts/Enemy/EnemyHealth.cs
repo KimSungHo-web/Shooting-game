@@ -89,15 +89,14 @@ public class EnemyHealth : MonoBehaviour
 
     public void StartSinking()
     {
-        dropitem.Drop();
+        GameManager.Instance.OnEnemyDeath(enemyData, gameObject);
 
         GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
 
         isDisappearing = true;
-
-        GameManager.Instance.OnEnemyDeath(enemyData);
         spawner.RemoveEnemy(gameObject);
+
         Destroy(gameObject, 2f);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DropAnimation : MonoBehaviour
 {
-    public float baseJumpHeight = 2.0f;
+    public float baseJumpHeight = 4.0f;
     public float baseDropTime = 1.0f;
     public Vector3 randomDropOffset = new Vector3(1.5f, 1f, 1.5f);
     public Vector3 itemscale = new Vector3(3f, 3f, 3f);
@@ -27,29 +27,58 @@ public class DropAnimation : MonoBehaviour
         switch (rarity)
         {
             case Rarity.Common:
-                _jumpHeight = baseJumpHeight;
-                _dropTime = baseDropTime;
-                //��ƼŬ �߰��ϱ� �� �ӽ�
+                _jumpHeight = baseJumpHeight*1.2f;
+                _dropTime = baseDropTime*1.2f;
+                //파티클 추가하기 전 임시
                 _light = gameObject.AddComponent<Light>();
                 _light.color = Color.white;
                 _light.intensity = 5f;
                 _light.range = 1f;
+                //
                 break;
             case Rarity.Uncommon:
                 _jumpHeight = baseJumpHeight * 1.2f;
                 _dropTime = baseDropTime * 1.2f;
+                //파티클 추가하기 전 임시
+                _light = gameObject.AddComponent<Light>();
+                _light.color = Color.blue;
+                _light.intensity = 5f;
+                _light.range = 1f;
+                //
                 break;
             case Rarity.Rare:
                 _jumpHeight = baseJumpHeight * 1.5f;
                 _dropTime = baseDropTime * 1.5f;
+                //파티클 추가하기 전 임시
+                _light = gameObject.AddComponent<Light>();
+                _light.color = Color.magenta;
+                _light.intensity = 5f;
+                _light.range = 1f;
+                //
                 break;
             case Rarity.Epic:
                 _jumpHeight = baseJumpHeight * 1.8f;
                 _dropTime = baseDropTime * 1.8f;
+                //파티클 추가하기 전 임시
+                _light = gameObject.AddComponent<Light>();
+                _light.color = Color.yellow;
+                _light.intensity = 5f;
+                _light.range = 1f;
+                //
                 break;
             case Rarity.Legendary:
                 _jumpHeight = baseJumpHeight * 2.0f;
                 _dropTime = baseDropTime * 2.0f;
+                //파티클 추가하기 전 임시
+                _light = gameObject.AddComponent<Light>();
+                _light.color = Color.red;
+                _light.intensity = 5f;
+                _light.range = 1f;
+                //
+                break;
+            case Rarity.Resource:
+                _jumpHeight = baseJumpHeight-2f;
+                _dropTime = baseDropTime;
                 break;
             default:
                 _jumpHeight = baseJumpHeight;
@@ -58,8 +87,6 @@ public class DropAnimation : MonoBehaviour
         }
 
         transform.localScale = itemscale;
-
-        
 
         StartCoroutine(AnimateDrop(originPosition));
     }
