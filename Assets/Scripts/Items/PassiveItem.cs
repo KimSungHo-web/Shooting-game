@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PassiveItem : InteractableItem, IInteractable, IPassiveItemHandler
+public class PassiveItem : InteractableItem, IPassiveItemHandler
 {
     public void ApplyPassiveEffect(GameObject target)
     {

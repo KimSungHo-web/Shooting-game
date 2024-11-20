@@ -6,8 +6,12 @@ public class PlayerInputController : PlayerController
 {
     [HideInInspector]
     public bool canLook = true;
-    public Action inventory;
+    public GameObject inventory;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     public void OnMove(InputValue value)
     {
         Vector2 moveDirection = value.Get<Vector2>().normalized;
@@ -33,7 +37,7 @@ public class PlayerInputController : PlayerController
 
     public void OnInventory()
     {
-        inventory?.Invoke();
+        inventory.SetActive(!inventory.activeInHierarchy);
         ToggleCursor();
     }
 

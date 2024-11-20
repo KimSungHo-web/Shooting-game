@@ -6,6 +6,6 @@ public interface IInteractable
     public string GetInteractPrompt();
 
     // 상호작용 가능한 오브젝트를 클릭했을때 실행되는 함수
-    public void OnInteract(Transform target);
+    public void OnInteract();
 
 }
