@@ -23,10 +23,8 @@ public class WeaponItem : InteractableItem, IEquipable, IInteractable
         throw new System.NotImplementedException();
     }
 
-    public void OnInteract(Transform target)
+    public void OnInteract()
     {
         throw new System.NotImplementedException();
     }
-
-
 }

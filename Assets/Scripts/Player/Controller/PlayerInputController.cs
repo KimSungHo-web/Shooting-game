@@ -6,7 +6,15 @@ public class PlayerInputController : PlayerController
 {
     [HideInInspector]
     public bool canLook = true;
-    public Action inventory;
+    //public event Action inventory;
+    //public event Action cubeInventory;
+    public GameObject inventory;
+    public GameObject cubeInventory;
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     public void OnMove(InputValue value)
     {
@@ -27,7 +35,15 @@ public class PlayerInputController : PlayerController
 
     public void OnInventory()
     {
-        inventory?.Invoke();
+        inventory.SetActive(!inventory.activeInHierarchy);
+        ToggleCursor();
+    }
+    
+    public void OnInteract()
+    {
+        bool isActive = cubeInventory.activeInHierarchy;
+        cubeInventory.SetActive(!isActive);
+        inventory.SetActive(!isActive);
         ToggleCursor();
     }
 
