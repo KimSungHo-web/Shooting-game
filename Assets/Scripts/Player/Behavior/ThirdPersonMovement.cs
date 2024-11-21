@@ -44,6 +44,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float _targetAngle;
 
     public float currentSpeed => _speed;
+    public bool isMoving => _speed >= 0.1f;
     public Vector3 CurrentPosition => transform.position; // �÷��̾��� ���� ��ġ ��ȯ(KSH�߰�)
     
     private void Awake()

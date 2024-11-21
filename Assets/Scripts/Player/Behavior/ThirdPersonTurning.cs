@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ThirdPersonTurning : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ThirdPersonTurning : MonoBehaviour
 
     private float _rotationVelocity;
     private Vector2 _inputDirection;
+    private int _isAiming;
 
     private void Awake()
     {
@@ -28,9 +30,19 @@ public class ThirdPersonTurning : MonoBehaviour
         _playerController.MoveEvent -= PlayerController_MoveEvent;
     }
 
+    private void OnAttack (InputValue value)
+    {
+        _isAiming += value.isPressed ? 1 : -1;
+    }
+
+    private void OnSkill (InputValue value)
+    {
+        _isAiming += value.isPressed ? 1 : -1;
+    }
+
     private void Update()
     {
-        if (_playerController.isAttacking)
+        if (_isAiming != 0)
         {
             float targetAngle = _mainCamera.transform.eulerAngles.y;
             Turn (targetAngle);
