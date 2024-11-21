@@ -11,19 +11,34 @@ public class AudioManager : Singleton<AudioManager>
     [Header("BGM")]
     [SerializeField] private AudioClip bgmClip;
 
+
     [Header("SFX")]
     [SerializeField] private AudioClip sfxClip;
+    [SerializeField] private AudioClip coinPickupClip;
+    [SerializeField] private AudioClip playerHitClip;
+    [SerializeField] private AudioClip expPickupClip;
+    [SerializeField] private AudioClip levelupClip;
+
 
     private void Awake()
     {
         SetAudioSource();
         SetAudioClip();
+
     }
     private void Start()
     {
-        _bgmSource.volume = 0.3f;
+        _bgmSource.volume = 0.05f;
         _sfxSource.volume = 0.3f;
     }
+
+    public override void Init()
+    {
+        base.Init();
+        AudioManager audioManager = AudioManager.Instance;
+        PlayStartBGM();
+    }
+
     private void SetAudioSource()
     {
         _bgmObj = new GameObject("@BGM");
@@ -37,8 +52,12 @@ public class AudioManager : Singleton<AudioManager>
 
     private void SetAudioClip()
     {
-        //bgmClip = ResourceLoad<AudioClip>("Audios/BGM_Clip");
-        //sfxClip = ResourceLoad<AudioClip>("Audios/SFX_ButtonClick");
+        bgmClip = Resources.Load<AudioClip>("Audios/BGM_Clip");
+        sfxClip = Resources.Load<AudioClip>("Audios/SFX_ButtonClick");
+        coinPickupClip = Resources.Load<AudioClip>("Audios/SFX_CoinPickup");
+        playerHitClip = Resources.Load<AudioClip>("Audios/SFX_PlayerHit");
+        expPickupClip = Resources.Load<AudioClip>("Audios/SFX_ExpPickup");
+        levelupClip = Resources.Load<AudioClip>("Audios/SFX_Levelup");
     }
 
     public void PlayBGM(AudioClip clip)
@@ -58,6 +77,18 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayStartBGM() => PlayBGM(bgmClip);
     public void PlayClickSFX() => PlaySFX(sfxClip);
+    public void PlayCoinPickupSFX() => PlaySFX(coinPickupClip);
+    public void PlayExpPickupSFX() => PlaySFX(expPickupClip);
+    public void PlayLevelupSFX() => PlaySFX(levelupClip);
+    public void PlayPlayerHitSFX()
+    {
+        PlaySFX(playerHitClip);
+        //플레이어 히트판정부분에 AudioManager.Instance.PlayPlayerHitSFX();
+    }
+
+   
+
+   
 
     public float GetBGMVolume() => _bgmSource.volume;
     public void SetBGMVolume(float volume) => _bgmSource.volume = volume;
