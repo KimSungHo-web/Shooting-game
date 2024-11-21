@@ -1588,7 +1588,7 @@ PrefabInstance:
     - target: {fileID: 3264595544738295403, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3264595544738295403, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
@@ -1599,7 +1599,7 @@ PrefabInstance:
     - target: {fileID: 3747361920828143355, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3747361920828143355, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
@@ -1722,6 +1722,32 @@ PrefabInstance:
     - target: {fileID: 6276061597068342443, guid: 759d62968dba82548b19bf755d59ba81,
         type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8390244, guid: d71a3dc7aa20fad4f9a99fc76a9254ba,
+        type: 3}
+    - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467133798032751848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1862,7 +1888,7 @@ PrefabInstance:
     - target: {fileID: 8037848493186578747, guid: 5363db571600ac247aff2980d0decac1,
         type: 3}
       propertyPath: m_Type
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8037848493186578747, guid: 5363db571600ac247aff2980d0decac1,
         type: 3}
@@ -1870,6 +1896,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8390244, guid: d71a3dc7aa20fad4f9a99fc76a9254ba,
         type: 3}
+    - target: {fileID: 8037848493186578747, guid: 5363db571600ac247aff2980d0decac1,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8789437796712138754, guid: 5363db571600ac247aff2980d0decac1,
         type: 3}
       propertyPath: m_fontAsset
