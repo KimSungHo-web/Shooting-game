@@ -11,8 +11,10 @@ public class AudioManager : Singleton<AudioManager>
     [Header("BGM")]
     [SerializeField] private AudioClip bgmClip;
 
+
     [Header("SFX")]
     [SerializeField] private AudioClip sfxClip;
+    [SerializeField] private AudioClip coinPickupClip;
 
     private void Awake()
     {
@@ -37,8 +39,9 @@ public class AudioManager : Singleton<AudioManager>
 
     private void SetAudioClip()
     {
-        //bgmClip = ResourceLoad<AudioClip>("Audios/BGM_Clip");
+        bgmClip = Resources.Load<AudioClip>("Audios/BGM_Clip");
         //sfxClip = ResourceLoad<AudioClip>("Audios/SFX_ButtonClick");
+        coinPickupClip = Resources.Load<AudioClip>("Audios/SFX_CoinPickup");
     }
 
     public void PlayBGM(AudioClip clip)
