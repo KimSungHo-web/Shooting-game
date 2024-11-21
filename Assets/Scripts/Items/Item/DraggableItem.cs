@@ -60,11 +60,12 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         // 인벤토리에 아이템을 배치할 수 있으면 배치하고 큐브 인벤토리에서 제거
         if (inventory.AddItem(item.itemData))
         {
+            Debug.Log($"아이템 {item.itemData.displayName} 인벤토리에 추가됨");
             cubeInventory.itemsInCube.Remove(item.itemData);  // 큐브 인벤토리에서 아이템 제거
         }
         else
         {
-
+            Debug.LogWarning($"아이템 {item.itemData.displayName}을 인벤토리에 추가할 공간이 없습니다.");
         }
     }
 }

@@ -46,9 +46,9 @@ public class DropItem : MonoBehaviour
                 {
                     Debug.LogWarning("드랍된 아이템의 ItemSO 데이터가 null입니다.");
                 }
-                DropAnimation dropanim =// droppedItem.GetComponent<DropAnimation>();
-                droppedItem.AddComponent<DropAnimation>();
-            
+                DropAnimation dropanim = droppedItem.AddComponent<DropAnimation>();
+                DraggableItem draggableItem = droppedItem.AddComponent<DraggableItem>();
+                
                 dropanim.StartDropAnimation(transform.position,dropItem.item.rarity);
                
                 break; 

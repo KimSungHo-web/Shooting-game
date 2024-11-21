@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -29,8 +30,19 @@ public class Inventory : MonoBehaviour
             {
                 GameObject slot = Instantiate(slotPrefab, inventoryPanel.transform);
                 InventorySlot slotScript = slot.GetComponent<InventorySlot>();
+
+                Image itemImageComponent = slot.GetComponentInChildren<Image>();
+                if (itemImageComponent != null)
+                {
+                    slotScript.itemImage = itemImageComponent;
+                }
+                else
+                {
+                    Debug.LogError("슬롯 프리팹에서 Image 컴포넌트를 찾을 수 없습니다.");
+                }
+
                 slotScript.InitializeSlot(row, col);
-                gridSlots[row, col] = slotScript;
+                gridSlots[row, col] = slotScript; // 그리드에 슬롯 할당
             }
         }
     }
@@ -54,6 +66,7 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+        Debug.LogWarning("인벤토리에 더 이상 아이템을 추가할 수 없습니다.");
         return false;  // 배치할 공간이 없음
     }
 
