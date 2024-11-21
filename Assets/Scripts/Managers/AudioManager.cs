@@ -18,6 +18,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioClip playerHitClip;
     [SerializeField] private AudioClip expPickupClip;
     [SerializeField] private AudioClip levelupClip;
+    [SerializeField] private AudioClip itemDropClip;
 
 
     private void Awake()
@@ -58,6 +59,7 @@ public class AudioManager : Singleton<AudioManager>
         playerHitClip = Resources.Load<AudioClip>("Audios/SFX_PlayerHit");
         expPickupClip = Resources.Load<AudioClip>("Audios/SFX_ExpPickup");
         levelupClip = Resources.Load<AudioClip>("Audios/SFX_Levelup");
+        itemDropClip = Resources.Load<AudioClip>("Audios/SFX_ItemDrop");
     }
 
     public void PlayBGM(AudioClip clip)
@@ -80,6 +82,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayCoinPickupSFX() => PlaySFX(coinPickupClip);
     public void PlayExpPickupSFX() => PlaySFX(expPickupClip);
     public void PlayLevelupSFX() => PlaySFX(levelupClip);
+    public void PlayItemDropSFX() => PlaySFX(itemDropClip);
     public void PlayPlayerHitSFX()
     {
         PlaySFX(playerHitClip);

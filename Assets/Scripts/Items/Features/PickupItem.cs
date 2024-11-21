@@ -34,8 +34,8 @@ public class PickupItem : MonoBehaviour
                 Debug.Log(itemData);
                 cubeInventory.AddItemToCube(itemData);
             }
-            
 
+            AudioManager.Instance.PlayItemDropSFX();
             Destroy(this.gameObject);
         }
 
