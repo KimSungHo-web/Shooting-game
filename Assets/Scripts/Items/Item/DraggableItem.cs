@@ -9,6 +9,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Inventory inventory;
     private Item item;
 
+    private Vector3 originalPosition;  // 아이템이 원래 있던 위치를 저장할 변수
+
     void Start()
     {
         inventory = FindObjectOfType<Inventory>();
@@ -19,14 +21,13 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (GetComponent<CanvasGroup>() == null){
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
-
-        gameObject.AddComponent<RectTransform>();
     }
 
     // 드래그 시작 시
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Drag Started");
+
         canvasGroup.blocksRaycasts = false;
         currentSlot = GetComponentInParent<InventorySlot>();  // 현재 슬롯 정보 저장
     }
@@ -35,6 +36,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Dragging");
+
         transform.position = Input.mousePosition;  // 마우스 위치로 아이템 이동
     }
 
@@ -45,26 +47,53 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         canvasGroup.blocksRaycasts = true;
 
-        if (inventory == null)
-        {
-            Debug.LogError("Inventory is null in OnEndDrag!");
-            return;
-        }
+        InventorySlot targetSlot = GetTargetSlot(eventData.position);
 
-        if (item == null)
+        if (targetSlot != null)
         {
-            Debug.LogError("Item is null in OnEndDrag!");
-            return;
-        }
-
-        // 인벤토리에 아이템을 배치할 수 있으면 배치하고 큐브 인벤토리에서 제거
-        if (inventory.AddItem(item.itemData))
-        {
-            cubeInventory.itemsInCube.Remove(item.itemData);  // 큐브 인벤토리에서 아이템 제거
+            // 목표 슬롯이 인벤토리 슬롯이라면, 현재 아이템의 슬롯을 기준으로 이동
+            if (targetSlot.GetComponentInParent<Inventory>())
+            {
+                if (cubeInventory.itemsInCube.Contains(item.itemData))
+                {
+                    cubeInventory.itemsInCube.Remove(item.itemData);
+                    inventory.itemsInInven.Add(item.itemData);
+                }
+            }
+            else if (targetSlot.GetComponentInParent<CubeInventory>())
+            {
+                if (inventory.itemsInInven.Contains(item.itemData))
+                {
+                    inventory.itemsInInven.Remove(item.itemData);
+                    cubeInventory.itemsInCube.Add(item.itemData);
+                }
+            }
         }
         else
         {
-
+            Destroy(gameObject);
         }
+
+        ShowInventory();  // UI 업데이트
+    }
+
+    // 드래그 종료 후 목표 슬롯을 찾는 메서드
+    private InventorySlot GetTargetSlot(Vector2 pointerPosition)
+    {
+        // 화면의 좌표를 RectTransform으로 변환하여, 그 좌표가 InventorySlot 안에 있는지 확인
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pointerPosition), Vector2.zero);
+        if (hit.collider != null)
+        {
+            // 충돌한 객체가 InventorySlot이라면 해당 슬롯을 반환
+            return hit.collider.GetComponent<InventorySlot>();
+        }
+        return null;  // 슬롯 외의 곳이면 null 반환
+    }
+
+    // UI 업데이트 메서드 (인벤토리 UI 갱신)
+    private void ShowInventory()
+    {
+        inventory.ShowInventory();
+        cubeInventory.ShowInventory();
     }
 }

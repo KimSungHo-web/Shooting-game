@@ -900,9 +900,25 @@ PrefabInstance:
       objectReference: {fileID: 654313019}
     - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
         type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 654313019}
+    - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
+        type: 3}
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1402618289}
+    - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
+        type: 3}
+      propertyPath: itemSlotParent
+      value: 
+      objectReference: {fileID: 1402618291}
+    - target: {fileID: 4152236629069177194, guid: b3825bbdaffc88b4296d468c638de5b9,
+        type: 3}
+      propertyPath: itemSlotPrefab
+      value: 
+      objectReference: {fileID: 3918708061095266675, guid: 2ec6d9323c9ca2141bec32f59bcd3be4,
+        type: 3}
     - target: {fileID: 6920693901672859169, guid: b3825bbdaffc88b4296d468c638de5b9,
         type: 3}
       propertyPath: m_Name
@@ -1167,6 +1183,12 @@ GameObject:
 --- !u!224 &1402618290 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7884266158869831604, guid: 307f278f45d30a64cb1340226c082737,
+    type: 3}
+  m_PrefabInstance: {fileID: 1402618288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1402618291 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4827148317353828497, guid: 307f278f45d30a64cb1340226c082737,
     type: 3}
   m_PrefabInstance: {fileID: 1402618288}
   m_PrefabAsset: {fileID: 0}

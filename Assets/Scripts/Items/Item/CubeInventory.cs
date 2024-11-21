@@ -34,7 +34,7 @@ public class CubeInventory : MonoBehaviour
         ShowInventory();  // 인벤토리 UI 업데이트
     }
 
-    private void ShowInventory()
+    public void ShowInventory()
     {
         foreach (var item in itemsInCube)
         {
