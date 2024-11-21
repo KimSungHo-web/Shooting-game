@@ -11,6 +11,7 @@ public class GrenadeRound : MonoBehaviour
     [SerializeField] private float _timer = 3f;
     [SerializeField] private AudioClip _launchSfxClip;
     [SerializeField] private AudioClip _explosionSfxClip;
+    [SerializeField] private AudioClip _grenadeBounceClip;
     [SerializeField] private float _explosionRadius = 5f;
     [SerializeField] private float _explosionDamage = 30f;
 
@@ -31,6 +32,7 @@ public class GrenadeRound : MonoBehaviour
     private void Start()
     {
         _rb.AddForce (transform.forward * _flySpeed, ForceMode.Impulse);
+        AudioManager.Instance.PlaySFX (_launchSfxClip);
     }
 
     private void Update()
@@ -46,6 +48,8 @@ public class GrenadeRound : MonoBehaviour
 
         if (IsLayerMatched (_obstacleLayer, layer))
         {
+            AudioManager.Instance.PlaySFX (_grenadeBounceClip);
+            
             _currentBounceCounter += 1;
             if (_currentBounceCounter >= _maxBounceCount)
                 ExplosionAndDestroy();
@@ -64,6 +68,8 @@ public class GrenadeRound : MonoBehaviour
         _explosionParticle.transform.position = transform.position;
         _explosionParticle.Stop();
         _explosionParticle.Play();
+        
+        AudioManager.Instance.PlaySFX (_explosionSfxClip);
         
         // apply damage to the enemies
         Collider[] colliders = Physics.OverlapSphere (transform.position, _explosionRadius, _enemyLayer);

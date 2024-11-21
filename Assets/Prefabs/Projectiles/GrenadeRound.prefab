@@ -395,6 +395,7 @@ MonoBehaviour:
   _timer: 3
   _launchSfxClip: {fileID: 8300000, guid: 761f51b71602ca348a10e2211b8ee2cf, type: 3}
   _explosionSfxClip: {fileID: 8300000, guid: 02688b2f82f5a2544bcf80e6e305fc60, type: 3}
+  _grenadeBounceClip: {fileID: 8300000, guid: 2dbf2c0614d384445ba18a712f5b1627, type: 3}
   _explosionRadius: 5
   _explosionDamage: 30
 --- !u!1 &2747663481181177766
