@@ -7,6 +7,7 @@ public class PlayerInputController : PlayerController
     [HideInInspector]
     public bool canLook = true;
     public GameObject inventory;
+    public GameObject cubeInventory;
 
     private void Awake()
     {
@@ -37,7 +38,9 @@ public class PlayerInputController : PlayerController
 
     public void OnInventory()
     {
-        inventory.SetActive(!inventory.activeInHierarchy);
+        bool isActive = inventory.activeInHierarchy;
+        inventory.SetActive(!isActive);
+        cubeInventory.SetActive(!isActive);
         ToggleCursor();
     }
 

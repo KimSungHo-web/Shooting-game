@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7acc89e3e113f40a8d3f5b14acfff1, type: 3}
-  m_Name: S0_M249
+  m_Name: Uzi
   m_EditorClassIdentifier: 
-  displayName: M249
-  description: "\uAE30\uBCF8 \uAE30\uAD00\uCD1D\uC785\uB2C8\uB2E4."
-  itemIcon: {fileID: 0}
-  itemType: 1
+  displayName: Uzi
+  description: "\uAE30\uBCF8 \uAE30\uAD00\uB2E8\uCD1D\uC785\uB2C8\uB2E4."
+  itemIcon: {fileID: 563336626, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  itemType: 0
   isStackable: 0
   stackSize: 0
   SlotSize: 0
-  equipType: 1
-  equipPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
+  equipType: 0
+  equipPrefab: {fileID: 1095254202041702, guid: 6273e2936e9d6a24e9f64c7c70d6bd19,
     type: 3}
-  dropItemPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
+  dropItemPrefab: {fileID: 1095254202041702, guid: 6273e2936e9d6a24e9f64c7c70d6bd19,
     type: 3}
-  rarity: 1
+  rarity: 0
   LeftHand: 0
-  childPath: M249
+  childPath: Uzi
   projectileDamage: 10
   projectileSpeed: 1
   projectileScale: 1

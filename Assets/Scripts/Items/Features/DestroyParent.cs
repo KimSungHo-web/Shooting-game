@@ -8,7 +8,6 @@ public class DestroyParent : MonoBehaviour
     protected virtual void Awake()
     {
         itemData = ItemManager.Instance.GetResourceItemSO(gameObject.name);
-        //아이템매니저에서 SO에서 ItemType 데이터를 받아오는 매서드
 
     }
     protected virtual void OnTriggerEnter(Collider other)
@@ -26,9 +25,11 @@ public class DestroyParent : MonoBehaviour
         {
             case "Gold":
                 GameManager.Instance.AddGold(itemData.resourceValue);
+                AudioManager.Instance.PlayCoinPickupSFX();
                 break;
             case "Exp":
                 GameManager.Instance.AddEXP(itemData.resourceValue);
+                AudioManager.Instance.PlayExpPickupSFX();
                 break;
             case "Item":
                 HandleItem();
