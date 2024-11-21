@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 2326094744605165194}
   - component: {fileID: 4624719221031762251}
   - component: {fileID: 7803054603191214980}
+  - component: {fileID: 5550325025685557035}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Player
@@ -402,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canLook: 1
+  inventory: {fileID: 0}
 --- !u!114 &2517550865025057295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,8 +436,6 @@ MonoBehaviour:
   _lockCameraPosition: 0
   mouseXSensitivity: 0.05
   mouseYSensitivity: 0.05
-  recoilAmountY: 0
-  recoilAmountX: 0
 --- !u!114 &8018776301880148291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,14 +482,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunBarrelEnd: {fileID: 4333184440728637799}
   _faceLight: {fileID: 8103503303468888091}
-  _hitParticles: {fileID: 0}
-  _hitBloodParticles: {fileID: 0}
+  _hitParticlesAsset: {fileID: 19800000, guid: ef39ae7291c751249b296f00bf6fb042, type: 3}
+  _hitBloodParticlesAsset: {fileID: 8894878414691281738, guid: 0a4e1dfdc00a55044b3aa5b2cc678d8f,
+    type: 3}
   _effectsDisplayTime: 0.05
   _fireRange: 100
   _shootableMask:
     serializedVersion: 2
     m_Bits: 576
   _defaultSpreadRange: 5
+  _fireDelay: 0.3
 --- !u!114 &4624719221031762251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +517,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c48f81b246ea04fbafc0d6bbac49f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5550325025685557035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968928291614023984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64345dbff4a2ae642b3e8469c8fb9509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gunBarrelEnd: {fileID: 6117912188512922077}
+  _grenadeRoundPrefab: {fileID: 2109794796555003064, guid: 37857ad5b92d3b04499d0d58b394e9c1,
+    type: 3}
+  _faceLight: {fileID: 8103503303468888091}
+  _effectsDisplayTime: 0.2
+  _fireDelay: 2
 --- !u!1 &4333184440728637799
 GameObject:
   m_ObjectHideFlags: 0

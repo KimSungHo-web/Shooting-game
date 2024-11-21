@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -7,14 +8,16 @@ public class ThirdPersonFiring : MonoBehaviour
 {
     [SerializeField] private GameObject _gunBarrelEnd;
     [SerializeField] private Light _faceLight;
-    [SerializeField] private ParticleSystem _hitParticles;
-    [SerializeField] private ParticleSystem _hitBloodParticles;
+    [SerializeField] private ParticleSystem _hitParticlesAsset;
+    [SerializeField] private ParticleSystem _hitBloodParticlesAsset;
     [SerializeField] private float _effectsDisplayTime = 0.2f;
     [SerializeField] private float _fireRange;
     [SerializeField] private LayerMask _shootableMask;
     [SerializeField] private float _defaultSpreadRange = 5f;
-    
-    private PlayerController _playerController;
+    [SerializeField] private float _fireDelay = 0.3f;
+
+    private ThirdPersonAim _aim;
+    private ThirdPersonMovement _movement;
     private PlayerStats _playerStats;
     private Camera _mainCamera;
 
@@ -23,11 +26,16 @@ public class ThirdPersonFiring : MonoBehaviour
     private AudioSource _gunAudio;
     private Light _gunLight;
 
-    private float _spreadRange;
+    private ParticleSystem _hitParticles;
+    private ParticleSystem _hitBloodParticles;
+
+    private float _fireDelayCounter;
+    private bool _pressingAttackKey;
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();
+        _aim = GetComponent<ThirdPersonAim>();
+        _movement = GetComponent<ThirdPersonMovement>();
         _playerStats = GetComponent<PlayerStatsHandler>().playerStats;
         _mainCamera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
         
@@ -36,26 +44,33 @@ public class ThirdPersonFiring : MonoBehaviour
         _gunAudio = _gunBarrelEnd.GetComponent<AudioSource>();
         _gunLight = _gunBarrelEnd.GetComponent<Light>();
 
-        _playerController.FireEvent += PlayerController_FireEvent;
-        _playerController.MoveEvent += PlayerController_MoveEvent;
-
-        _spreadRange = _defaultSpreadRange;
+        _hitParticles = Instantiate (_hitParticlesAsset);
+        _hitBloodParticles = Instantiate (_hitBloodParticlesAsset);
     }
 
-    private void PlayerController_FireEvent()
+    private void Update()
     {
-        Fire();
+        if (_fireDelayCounter < _fireDelay)
+            _fireDelayCounter += Time.deltaTime;
+
+        if (_pressingAttackKey)
+        {
+            if (_aim.isAimAligned)
+            {
+                if (_fireDelayCounter >= _fireDelay)
+                {
+                    _fireDelayCounter = 0f;
+                    Fire();
+                }
+            }
+        }
+    }
+
+    private void OnAttack (InputValue value)
+    {
+        _pressingAttackKey = value.isPressed;
     }
     
-    private void PlayerController_MoveEvent (Vector2 vector)
-    {
-        if (vector == Vector2.zero)
-            // not walking
-            _spreadRange = _defaultSpreadRange;
-        else
-            _spreadRange = _defaultSpreadRange * 5f;
-    }
-
     private void Fire()
     {
         _gunAudio.Play();
@@ -68,9 +83,12 @@ public class ThirdPersonFiring : MonoBehaviour
 
         _gunLine.enabled = true;
         _gunLine.SetPosition(0, _gunBarrelEnd.transform.position);
+
+        float spreadRange = _defaultSpreadRange;
+        spreadRange *= _movement.isMoving ? 5f : 1f; 
         
-        float xSpread = Random.Range (-1f, 1f) * _spreadRange;
-        float ySpread = Random.Range (-1f, 1f) * _spreadRange;
+        float xSpread = Random.Range (-1f, 1f) * spreadRange;
+        float ySpread = Random.Range (-1f, 1f) * spreadRange;
         Vector2 screenSpreadPoint = new Vector2 (Screen.width / 2f + xSpread, Screen.height / 2f + ySpread);
         Ray fireRay = _mainCamera.ScreenPointToRay (screenSpreadPoint);
         
@@ -82,6 +100,7 @@ public class ThirdPersonFiring : MonoBehaviour
             {
                 _hitBloodParticles.transform.position = hit.point;
                 _hitBloodParticles.transform.forward = hit.normal;
+                _hitBloodParticles.Stop();
                 _hitBloodParticles.Play();
 
                 if (hit.collider.gameObject.TryGetComponent (out EnemyHealth enemyHealth))

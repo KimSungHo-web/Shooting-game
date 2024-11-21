@@ -559,21 +559,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 654313019}
-    - target: {fileID: 2326094744605165194, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
-        type: 3}
-      propertyPath: _hitParticles
-      value: 
-      objectReference: {fileID: 1790867399}
-    - target: {fileID: 2326094744605165194, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
-        type: 3}
-      propertyPath: _hitBloodParticles
-      value: 
-      objectReference: {fileID: 1790867398}
-    - target: {fileID: 2326094744605165194, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
-        type: 3}
-      propertyPath: _shootableMask.m_Bits
-      value: 576
-      objectReference: {fileID: 0}
     - target: {fileID: 3968928291614023984, guid: c2a42bb0e1b760f4cb4ec7b588203cd4,
         type: 3}
       propertyPath: m_Name
@@ -1432,18 +1417,6 @@ PrefabInstance:
 --- !u!4 &1790867397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2100283225254640763, guid: 8850ee7e86b4eba4c947787580973aaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1790867396}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1790867398 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6253018153543883826, guid: 8850ee7e86b4eba4c947787580973aaa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1790867396}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1790867399 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 569249328418386567, guid: 8850ee7e86b4eba4c947787580973aaa,
     type: 3}
   m_PrefabInstance: {fileID: 1790867396}
   m_PrefabAsset: {fileID: 0}
