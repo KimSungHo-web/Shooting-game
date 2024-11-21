@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class CubeInventory : MonoBehaviour
 {
-    public List<Item> itemsInCube;
+    public List<ItemSO> itemsInCube;
     public GameObject inventoryUI;
     public Transform itemSlotParent;
+    public GameObject itemSlotPrefab;
 
     private void Start()
     {
@@ -22,24 +23,29 @@ public class CubeInventory : MonoBehaviour
         }
     }
 
+    // 큐브 인벤토리에 아이템 추가
+    public void AddItemToCube(ItemSO itemData)
+    {
+        GameObject itemObject = new GameObject(itemData.displayName);
+        Item item = itemObject.AddComponent<Item>();
+
+        item.Initialize(itemData);
+        itemsInCube.Add(itemData);
+
+        ShowInventory();  // 인벤토리 UI 업데이트
+    }
+
     private void ShowInventory()
     {
-        foreach (Transform child in itemSlotParent)
-        {
-            Destroy(child.gameObject);
-        }
-
         foreach (var item in itemsInCube)
         {
-            GameObject itemSlot = new GameObject(item.itemName);
-            itemSlot.transform.SetParent(itemSlotParent);
-            itemSlot.AddComponent<UnityEngine.UI.Image>().sprite = item.itemIcon; 
-            itemSlot.AddComponent<UnityEngine.UI.Button>();
+            GameObject itemSlot = Instantiate(itemSlotPrefab, itemSlotParent);
+            itemSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.itemIcon;
 
-            // 클릭 시 아이템 설명을 출력하는 로직을 추가할 수 있습니다.
-            itemSlot.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() =>
+            UnityEngine.UI.Button itemButton = itemSlot.GetComponent<UnityEngine.UI.Button>();
+            itemButton.onClick.AddListener(() =>
             {
-                Debug.Log($"아이템 {item.itemName}:");
+                Debug.Log($"아이템 {item.displayName} 선택됨");
             });
         }
     }

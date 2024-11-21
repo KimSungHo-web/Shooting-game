@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uAD8C\uCD1D"
   description: "\uAE30\uBCF8 \uAD8C\uCD1D\uC785\uB2C8\uB2E4."
-  itemValue: 0
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: -205726582, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   itemType: 1
   isStackable: 0
   stackSize: 0
   SlotSize: 0
   equipType: 1
   equipPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad,
+    type: 3}
+  dropItemPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad,
     type: 3}
   rarity: 0
   LeftHand: 0
@@ -30,7 +31,8 @@ MonoBehaviour:
   projectileSpeed: 1
   projectileScale: 1
   consumables: []
-  dropItemPrefab: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad,
-    type: 3}
+  dropConsumeItemPrefab: {fileID: 0}
   resourceType: 1
+  resourceValue: 0
+  ResourcePrefab: {fileID: 0}
   needResources: []
