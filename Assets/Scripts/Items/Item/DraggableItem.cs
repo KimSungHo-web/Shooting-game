@@ -9,8 +9,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private Inventory inventory;
     private Item item;
 
-    private Vector3 originalPosition;  // 아이템이 원래 있던 위치를 저장할 변수
-
     void Start()
     {
         inventory = FindObjectOfType<Inventory>();
@@ -68,10 +66,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
                     cubeInventory.itemsInCube.Add(item.itemData);
                 }
             }
-        }
-        else
-        {
-            Destroy(gameObject);
         }
 
         ShowInventory();  // UI 업데이트

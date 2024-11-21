@@ -25,10 +25,10 @@ public class CubeInventory : MonoBehaviour
 
     public void AddItemToCube(ItemSO itemData)
     {
-        GameObject itemObject = new GameObject(itemData.displayName);
-        Item item = itemObject.AddComponent<Item>();
+        //GameObject itemObject = new GameObject(itemData.displayName);
+        //Item item = itemObject.AddComponent<Item>();
 
-        item.Initialize(itemData);
+        //item.Initialize(itemData);
         itemsInCube.Add(itemData);
 
         ShowInventory();  // 인벤토리 UI 업데이트
@@ -36,6 +36,11 @@ public class CubeInventory : MonoBehaviour
 
     public void ShowInventory()
     {
+        foreach (Transform child in itemSlotParent)
+        {
+            Destroy(child.gameObject);
+        }
+
         foreach (var item in itemsInCube)
         {
             GameObject itemSlot = Instantiate(itemSlotPrefab, itemSlotParent);
