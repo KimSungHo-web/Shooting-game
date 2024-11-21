@@ -41,6 +41,9 @@ public class CubeInventory : MonoBehaviour
             GameObject itemSlot = Instantiate(itemSlotPrefab, itemSlotParent);
             itemSlot.GetComponent<UnityEngine.UI.Image>().sprite = item.itemIcon;
 
+            itemSlot.AddComponent<Item>();
+            itemSlot.GetComponent<Item>().itemData = item;
+
             UnityEngine.UI.Button itemButton = itemSlot.GetComponent<UnityEngine.UI.Button>();
             itemButton.onClick.AddListener(() =>
             {
