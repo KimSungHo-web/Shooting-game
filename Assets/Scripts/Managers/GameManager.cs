@@ -33,50 +33,49 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // �ʱ� UI ������Ʈ
+    
         UpdateAllUI();
     }
 
     public void AddGold(int amount)
     {
         currentGold += amount;
-        playerUI.UpdateGold(currentGold); // ���?UI ������Ʈ
-        Debug.Log($"���?�߰�: {amount}. ���� ���? {currentGold}");
+        playerUI.UpdateGold(currentGold);
+       // Debug.Log($"���?�߰�: {amount}. ���� ���? {currentGold}");
     }
 
     public void AddEXP(int amount)
     {
         currentEXP += amount;
 
-        // ���� �������� �ʿ��� ����ġ ���?
+        
         int expToNextLevel = CalculateExpForNextLevel(currentLevel);
 
-        // ����ġ�� ���� ������ �����ϸ� ���� ��
+       
         while (currentEXP >= expToNextLevel)
         {
-            currentEXP -= expToNextLevel; // ���� ����ġ���� ���� ������ �ʿ��� ����ġ�� ��
-            LevelUp(); // ���� ��
-            expToNextLevel = CalculateExpForNextLevel(currentLevel); // ���ο� ������ �ʿ� ����ġ ���?
+            currentEXP -= expToNextLevel; 
+            LevelUp(); 
+            expToNextLevel = CalculateExpForNextLevel(currentLevel);
         }
 
-        // ����ġ UI ������Ʈ
         float expPercentage = (float)currentEXP / expToNextLevel;
         playerUI.UpdateExperience(expPercentage);
 
-        Debug.Log($"����ġ �߰�: {amount}. ���� ����ġ: {currentEXP}/{expToNextLevel}");
+       // Debug.Log($"����ġ �߰�: {amount}. ���� ����ġ: {currentEXP}/{expToNextLevel}");
     }
 
     private void LevelUp()
     {
         currentLevel++;
-        playerUI.UpdateLevel(currentLevel); // ���� UI ������Ʈ
-        Debug.Log($"���� ��! ���� ����: {currentLevel}");
+        playerUI.UpdateLevel(currentLevel);
+      //  Debug.Log($"���� ��! ���� ����: {currentLevel}");
     }
 
     public void OnPlayerDeath()
     {
-        Debug.Log("�÷��̾ ����߽��ϴ�? ���� ����!");
-        // ���� ���� ó�� ����
+       // Debug.Log("�÷��̾ ����߽��ϴ�? ���� ����!");
+  
     }
 
     public void OnEnemyDeath(EnemyData enemyData, GameObject enemyObject)
@@ -90,13 +89,12 @@ public class GameManager : MonoBehaviour
 
         AddGold(enemyData.goldValue);
         AddEXP(enemyData.expValue);
-        Debug.Log($"�� ���? {enemyData.name}. ���� - ���? {enemyData.goldValue}, ����ġ: {enemyData.expValue}");
+      //  Debug.Log($"�� ���? {enemyData.name}. ���� - ���? {enemyData.goldValue}, ����ġ: {enemyData.expValue}");
 
     }
 
     private int CalculateExpForNextLevel(int level)
     {
-        // ������ ���� �ʿ��� ����ġ�� ���?(���� ����)
         return 100 + (level * 50);
     }
 
@@ -104,8 +102,8 @@ public class GameManager : MonoBehaviour
     {
         playerUI.UpdateGold(currentGold);
         playerUI.UpdateHealth(playerHealth.health, playerHealth.maxHealth);
-        playerUI.UpdateStamina(1, 1); // �ʱ� ���¹̳� (���� ��)
-        playerUI.UpdateExperience(0); // �ʱ� ����ġ (0%)
+        playerUI.UpdateStamina(1, 1); 
+        playerUI.UpdateExperience(0); 
         playerUI.UpdateLevel(currentLevel);
     }
 }

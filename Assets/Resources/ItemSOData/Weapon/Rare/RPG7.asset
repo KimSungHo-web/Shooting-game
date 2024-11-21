@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7acc89e3e113f40a8d3f5b14acfff1, type: 3}
-  m_Name: S0_RPG7
+  m_Name: RPG7
   m_EditorClassIdentifier: 
   displayName: RPG7
   description: "\uAE30\uBCF8 \uB300\uD3EC\uC785\uB2C8\uB2E4."

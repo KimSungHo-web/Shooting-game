@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6429451866464579934}
   - component: {fileID: -2936381383538377874}
   m_Layer: 0
-  m_Name: Bennelli_M4
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

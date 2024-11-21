@@ -34,12 +34,23 @@ public class DropItem : MonoBehaviour
             if (Random.Range(0f, 100f) <= dropItem.dropChance)
             {
                 GameObject droppedItem = Instantiate(dropItem.item.dropItemPrefab, transform.position, Quaternion.identity);
+                droppedItem.name = dropItem.item.name;
+
+                PickupItem pickupItem = droppedItem.AddComponent<PickupItem>();
+                if (dropItem.item != null)
+                {
+                    pickupItem.SetItemData(dropItem.item);
+                    Debug.Log($"아이템 데이터 할당 완료: {dropItem.item.name}");
+                }
+                else
+                {
+                    Debug.LogWarning("드랍된 아이템의 ItemSO 데이터가 null입니다.");
+                }
                 DropAnimation dropanim =// droppedItem.GetComponent<DropAnimation>();
                 droppedItem.AddComponent<DropAnimation>();
             
                 dropanim.StartDropAnimation(transform.position,dropItem.item.rarity);
                
-                Debug.Log($"{dropItem.item}이(가) 드롭되었습니다.");
                 break; 
             }
         }

@@ -23,7 +23,6 @@ public class CubeInventory : MonoBehaviour
         }
     }
 
-    // 큐브 인벤토리에 아이템 추가
     public void AddItemToCube(ItemSO itemData)
     {
         GameObject itemObject = new GameObject(itemData.displayName);

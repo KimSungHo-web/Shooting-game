@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c7acc89e3e113f40a8d3f5b14acfff1, type: 3}
-  m_Name: S0_Shotgun
+  m_Name: M249
   m_EditorClassIdentifier: 
-  displayName: "\uC0B0\uD0C4\uCD1D"
-  description: "\uAE30\uBCF8 \uC0B0\uD0C4\uCD1D\uC785\uB2C8\uB2E4."
-  itemIcon: {fileID: -762074860, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
+  displayName: M249
+  description: "\uAE30\uBCF8 \uAE30\uAD00\uCD1D\uC785\uB2C8\uB2E4."
+  itemIcon: {fileID: -1786786079, guid: d71a3dc7aa20fad4f9a99fc76a9254ba, type: 3}
   itemType: 1
   isStackable: 0
   stackSize: 0
   SlotSize: 0
   equipType: 1
-  equipPrefab: {fileID: 1236257789494122, guid: 8b0b86b42def11849a8eba21f4a6a684,
+  equipPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
     type: 3}
-  dropItemPrefab: {fileID: 1236257789494122, guid: 8b0b86b42def11849a8eba21f4a6a684,
+  dropItemPrefab: {fileID: 1261748888023320, guid: 432643b6e5110004083fdff3e33e490b,
     type: 3}
-  rarity: 0
+  rarity: 1
   LeftHand: 0
-  childPath: 
+  childPath: M249
   projectileDamage: 10
   projectileSpeed: 1
   projectileScale: 1
