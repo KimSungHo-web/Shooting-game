@@ -25,9 +25,11 @@ public class DestroyParent : MonoBehaviour
         {
             case "Gold":
                 GameManager.Instance.AddGold(itemData.resourceValue);
+                AudioManager.Instance.PlayCoinPickupSFX();
                 break;
             case "Exp":
                 GameManager.Instance.AddEXP(itemData.resourceValue);
+                AudioManager.Instance.PlayExpPickupSFX();
                 break;
             case "Item":
                 HandleItem();

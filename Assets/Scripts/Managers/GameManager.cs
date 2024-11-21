@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-    
         UpdateAllUI();
+
     }
 
     public void AddGold(int amount)

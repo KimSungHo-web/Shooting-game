@@ -32,7 +32,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     public virtual void Init()
     {
-        Debug.Log($"Init {typeof(T).Name}");
+        Debug.Log($"{typeof(T).Name} 생성 완료");
     }
 
     public void SingletonDestroy()
