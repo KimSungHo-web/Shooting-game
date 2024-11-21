@@ -1,18 +1,13 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Item
+public class Item : MonoBehaviour
 {
-    public string itemName;
-    public Sprite itemIcon;
-    public int width = 1;
-    public int height = 1;
+    public ItemSO itemData;  // 아이템 데이터 (ItemSO)
+    public int quantity;  // 아이템 개수 (스택 가능한 경우)
 
-    public Item(string name, Sprite icon, int w, int h)
+    public void Initialize(ItemSO data)
     {
-        itemName = name;
-        itemIcon = icon;
-        width = w;
-        height = h;
+        itemData = data;
+        quantity = 1;  // 기본적으로 1개부터 시작
     }
 }

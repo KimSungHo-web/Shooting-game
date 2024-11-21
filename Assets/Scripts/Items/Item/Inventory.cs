@@ -30,58 +30,66 @@ public class Inventory : MonoBehaviour
                 GameObject slot = Instantiate(slotPrefab, inventoryPanel.transform);
                 InventorySlot slotScript = slot.GetComponent<InventorySlot>();
                 slotScript.InitializeSlot(row, col);
-                gridSlots[row, col] = slotScript;  // 슬롯을 그리드에 할당
+                gridSlots[row, col] = slotScript;
             }
         }
     }
 
     public void Toggle() => InventoryUI.SetActive(!InventoryUI.activeInHierarchy);
 
-    // 아이템 배치 메서드
-    public bool AddItem(Item item)
+    // 아이템을 인벤토리에 추가하는 메서드
+    public bool AddItem(ItemSO itemData)
     {
+        Item item = new GameObject(itemData.displayName).AddComponent<Item>();
+        item.Initialize(itemData);
+
         for (int row = 0; row < _row; row++)
         {
             for (int col = 0; col < _col; col++)
             {
-                // 아이템이 배치 가능한 공간을 찾는다.
-                if (CanPlaceItem(item, row, col))
+                if (gridSlots[row, col].IsOccupied == false)  // 슬롯이 비어 있으면
                 {
-                    PlaceItem(item, row, col);
-                    return true;  // 아이템 배치 성공
+                    PlaceItem(item, row, col);  // 아이템 배치
+                    return true;
                 }
             }
         }
         return false;  // 배치할 공간이 없음
     }
 
-    // 아이템을 배치할 수 있는지 확인하는 메서드
-    private bool CanPlaceItem(Item item, int startRow, int startCol)
+    //// 아이템을 배치할 수 있는지 확인하는 메서드
+    //private bool CanPlaceItem(Item item, int startRow, int startCol)
+    //{
+    //    if (startRow + item.height > _row || startCol + item.width > _col)
+    //        return false;
+
+    //    for (int row = startRow; row < startRow + item.height; row++)
+    //    {
+    //        for (int col = startCol; col < startCol + item.width; col++)
+    //        {
+    //            if (gridSlots[row, col].IsOccupied)
+    //                return false;  // 이미 아이템이 배치된 슬롯이 있으면 안 됨
+    //        }
+    //    }
+
+    //    return true;  // 배치 가능한 경우
+    //}
+
+    // 아이템을 그리드에 배치하는 메서드 (1칸에 1개씩만 배치)
+    private void PlaceItem(Item item, int row, int col)
     {
-        if (startRow + item.height > _row || startCol + item.width > _col)
-            return false;
-
-        for (int row = startRow; row < startRow + item.height; row++)
-        {
-            for (int col = startCol; col < startCol + item.width; col++)
-            {
-                if (gridSlots[row, col].IsOccupied)
-                    return false;  // 이미 아이템이 배치된 슬롯이 있으면 안 됨
-            }
-        }
-
-        return true;  // 배치 가능한 경우
+        gridSlots[row, col].PlaceItem(item);  // 해당 슬롯에 아이템 배치
     }
 
-    // 아이템을 그리드에 배치하는 메서드
-    private void PlaceItem(Item item, int startRow, int startCol)
-    {
-        for (int row = startRow; row < startRow + item.height; row++)
-        {
-            for (int col = startCol; col < startCol + item.width; col++)
-            {
-                gridSlots[row, col].PlaceItem(item);  // 해당 슬롯에 아이템 배치
-            }
-        }
-    }
+    //// 아이템을 그리드에 배치하는 메서드
+    //private void PlaceItem(Item item, int startRow, int startCol)
+    //{
+    //    for (int row = startRow; row < startRow + item.height; row++)
+    //    {
+    //        for (int col = startCol; col < startCol + item.width; col++)
+    //        {
+    //            gridSlots[row, col].PlaceItem(item);  // 해당 슬롯에 아이템 배치
+    //        }
+    //    }
+    //}
 }

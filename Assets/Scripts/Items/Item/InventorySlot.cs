@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour
     public void PlaceItem(Item item)
     {
         currentItem = item;
-        itemImage.sprite = item.itemIcon;
+        itemImage.sprite = item.itemData.itemIcon;
     }
 
     // 슬롯에서 아이템을 제거하는 메서드
