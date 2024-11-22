@@ -20,7 +20,7 @@
   
 # 🎮 게임 설명
 
-| (![1]https://github.com/user-attachments/assets/33790221-b6c1-45b3-a982-1bbf5fa10a37) | [Gamestart](https://github.com/user-attachments/assets/da4dcd1a-7466-4092-8834-3ac081f8a77b) |
+|![Gamestart](https://github.com/user-attachments/assets/64184593-feb7-4938-bfb5-a937ef653112)|![GameMain](https://github.com/user-attachments/assets/6c56e61e-f995-4fe0-93f2-6d6fe2505cda)|
 |--------------------------------|-----------------------------|
 | **시작 화면**                 | **사용자 정보 화면**         |
 </p>
