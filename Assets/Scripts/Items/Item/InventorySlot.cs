@@ -8,6 +8,11 @@ public class InventorySlot : MonoBehaviour
     private Item currentItem;
     public bool IsOccupied => currentItem != null;  // 슬롯이 아이템을 차지하고 있는지 여부
 
+    private void Start()
+    {
+        itemImage = GetComponent<Image>();
+    }
+
     public void InitializeSlot(int row, int col)
     {
         this.row = row;
@@ -19,7 +24,10 @@ public class InventorySlot : MonoBehaviour
     public void PlaceItem(Item item)
     {
         currentItem = item;
-        itemImage.sprite = item.itemData.itemIcon;
+        if (currentItem != null)
+        {
+            itemImage.sprite = currentItem.itemData.itemIcon;
+        }
     }
 
     // 슬롯에서 아이템을 제거하는 메서드

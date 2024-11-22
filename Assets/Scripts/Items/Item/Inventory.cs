@@ -11,7 +11,6 @@ public class Inventory : MonoBehaviour
     private int _col = 6;
 
     private InventorySlot[,] gridSlots;  // 그리드 슬롯 배열
-    private List<Item> items = new List<Item>();  // 인벤토리 아이템 리스트
 
     void Start()
     {
@@ -42,6 +41,12 @@ public class Inventory : MonoBehaviour
     {
         Item item = new GameObject(itemData.displayName).AddComponent<Item>();
         item.Initialize(itemData);
+
+        if(!item || !item.itemData)
+        {
+            Debug.LogError("sdnjasdlas");
+            return false;
+        }
 
         for (int row = 0; row < _row; row++)
         {
