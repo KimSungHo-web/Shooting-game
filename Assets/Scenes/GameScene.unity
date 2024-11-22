@@ -1001,6 +1001,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7482834334336467230, guid: 307f278f45d30a64cb1340226c082737,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482834334336467230, guid: 307f278f45d30a64cb1340226c082737,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482834334336467230, guid: 307f278f45d30a64cb1340226c082737,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7884266158869831604, guid: 307f278f45d30a64cb1340226c082737,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1232,6 +1247,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CrossHairUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042226422143027313, guid: 132716aea19e89c4fa2b6760fc75c72f,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042226422143027313, guid: 132716aea19e89c4fa2b6760fc75c72f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042226422143027313, guid: 132716aea19e89c4fa2b6760fc75c72f,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 5152273775199469663, guid: 132716aea19e89c4fa2b6760fc75c72f,
         type: 3}
@@ -1750,6 +1780,21 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7774534693797041848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774534693797041848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774534693797041848, guid: 759d62968dba82548b19bf755d59ba81,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1784,6 +1829,21 @@ PrefabInstance:
     - target: {fileID: 6049946182816518, guid: 5363db571600ac247aff2980d0decac1, type: 3}
       propertyPath: m_Name
       value: BossUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759190700046088295, guid: 5363db571600ac247aff2980d0decac1,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759190700046088295, guid: 5363db571600ac247aff2980d0decac1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759190700046088295, guid: 5363db571600ac247aff2980d0decac1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 3206777351751372387, guid: 5363db571600ac247aff2980d0decac1,
         type: 3}
