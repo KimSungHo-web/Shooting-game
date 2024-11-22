@@ -42,29 +42,26 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("Drag Ended");
-
         canvasGroup.blocksRaycasts = true;
 
-        if (inventory == null)
-        {
-            Debug.LogError("Inventory is null in OnEndDrag!");
-            return;
-        }
-
-        if (item == null)
-        {
-            Debug.LogError("Item is null in OnEndDrag!");
-            return;
-        }
+        InventorySlot targetSlot = GetTargetSlot(eventData.position);
 
         // 인벤토리에 아이템을 배치할 수 있으면 배치하고 큐브 인벤토리에서 제거
         if (inventory.AddItem(item.itemData))
         {
             cubeInventory.itemsInCube.Remove(item.itemData);  // 큐브 인벤토리에서 아이템 제거
+            cubeInventory.ShowInventory();
         }
-        else
-        {
+    }
 
+    private InventorySlot GetTargetSlot(Vector2 pointerPosition)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pointerPosition), Vector2.zero);
+        if (hit.collider != null)
+        {
+            // 충돌한 객체가 InventorySlot이라면 해당 슬롯을 반환
+            return hit.collider.GetComponent<InventorySlot>();
         }
+        return null;  // 슬롯 외의 곳이면 null 반환
     }
 }
