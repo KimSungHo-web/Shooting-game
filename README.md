@@ -19,7 +19,8 @@
 - 팀원: 김성호, 이건호, 오주성, 이민섭
   
 # 🎮 게임 설명
-
+![1](https://github.com/user-attachments/assets/33790221-b6c1-45b3-a982-1bbf5fa10a37)
+![Gamestart](https://github.com/user-attachments/assets/da4dcd1a-7466-4092-8834-3ac081f8a77b)
 # 🕹️ 게임 플레이 방식
 
 # 📹 시연 영상
